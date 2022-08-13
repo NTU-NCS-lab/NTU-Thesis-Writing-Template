@@ -30,9 +30,8 @@
 \RequirePackage{url}
 \RequirePackage{verbatim}
 \RequirePackage{graphicx}
-\RequirePackage{cite}
 \RequirePackage{svg}
-\RequirePackage[dvipsnames]{xcolor} 
+\RequirePackage{xcolor} 
 
 %To use Chinese words
 \RequirePackage{CJKutf8}
