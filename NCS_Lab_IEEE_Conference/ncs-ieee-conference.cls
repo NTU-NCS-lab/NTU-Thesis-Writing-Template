@@ -10,9 +10,6 @@
 % Document      : https://github.com/NTU-NCS-lab/ThesisWritingTemplate
 % Last Updated  : 2022.08.13
 
-% Comment this line to use the default IEEE style
-\def\useNCSStyle{1}
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ncs-ieee-conference}[2022/08/13 v1.0 NTU NCS lab Thesis Template]
 
@@ -40,7 +37,7 @@
 \graphicspath{{./imgs/}}
 
 %== use and define color ==%
-\if\useNCSStyle1
+\ifdefined\useNCSStyle
     \usepackage[
     backend=biber,
     hyperref=true,

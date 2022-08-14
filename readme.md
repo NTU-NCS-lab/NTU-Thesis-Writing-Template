@@ -3,6 +3,12 @@ This template is also available on [overleaf](https://www.overleaf.com/project),
 
 ## Main feature
 1. The citation and bibliography format.
+2. Fast style switching by commenting this line in `main.tex`
+    ```
+    \def\useNCSStyle{1}
+    ```
+3. Default image source folder: `./imgs/`
+4. Please add your bibitems in `ref.bib`
 
 
 ## Quick start
