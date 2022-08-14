@@ -29,6 +29,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{svg}
 \RequirePackage{xcolor} 
+\RequirePackage{hyperref}
 
 %To use Chinese words
 \RequirePackage{CJKutf8}
@@ -43,12 +44,14 @@
     hyperref=true,
     citestyle=../src/ncs-citation,
     indexing=true,
-    bibstyle=../src/settings/ncs-bbx,
+    bibstyle=../src/ncs-bbx,
     ]{biblatex}
-    \addbibresource{ref.bib}
 
     % Change the section color
     \renewcommand\thesection{\color{blue}{\Roman{section}}}
+    
+    \DeclareCaptionFont{capblue}{\color{blue}}
+    \captionsetup{font={capblue, bf}}
 \else
     \usepackage[
     backend=biber,
@@ -57,5 +60,5 @@
     indexing=true,
     bibstyle=ieee,
     ]{biblatex}
-    \addbibresource{ref.bib}
 \fi
+\addbibresource{ref.bib}
