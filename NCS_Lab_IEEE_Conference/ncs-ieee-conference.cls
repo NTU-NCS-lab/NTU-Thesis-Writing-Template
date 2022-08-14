@@ -41,9 +41,9 @@
     \usepackage[
     backend=biber,
     hyperref=true,
-    citestyle=./settings/ncs-citation,
+    citestyle=../src/ncs-citation,
     indexing=true,
-    bibstyle=./settings/ncs-bbx,
+    bibstyle=../src/settings/ncs-bbx,
     ]{biblatex}
     \addbibresource{ref.bib}
 
