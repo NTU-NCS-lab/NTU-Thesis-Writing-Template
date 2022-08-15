@@ -68,9 +68,11 @@ This is a modification from [this](https://github.com/Hsins/NTU-Thesis-LaTeX-Tem
 Please use `xelatex` to compile this project.
 
 ### Overleaf
-The most easy way is to edit on Overleaf, please follow this [link](https://www.overleaf.com/read/cjhmcnpxjbgp) and make a copy from it.
+The easiest method is to edit on Overleaf, please follow this [link](https://www.overleaf.com/read/cjhmcnpxjbgp) and make a copy from it.
 
 ### Build at local
+Please follow the [instructions](https://github.com/NTU-NCS-lab/ThesisWritingTemplate#quick-start) to setup the environments.
+
 #### Method 1
 Please run `biber main` to generate `main.bbl` first and then run `xelatex main` to generate pdf file.
 
