@@ -17,16 +17,40 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ncs-thesis}[2022/08/14 v1.0 NTU NCS lab Thesis Template]
 
-\newcommand{\ncs@titlecolor}{blue}
+%% Redefine colors
+\ifdefined\useNCSStyle
+    \newcommand{\ncs@citecolor}{red}
+    \newcommand{\ncs@titlecolor}{blue}
+\else
+    \newcommand{\ncs@citecolor}{black}
+    \newcommand{\ncs@titlecolor}{black}
+\fi
+
+\newcommand{\ncscolor}[2]{
+    \ifdefined\useNCSStyle
+        {\color{#1}{#2}}
+    \else
+        {#2}
+    \fi
+}
+\newcommand{\ncsred}[1]{
+  \ncscolor{\ncs@citecolor}{#1}
+}
+\newcommand{\ncsblue}[1]{
+    \ncscolor{\ncs@titlecolor}{#1}
+}
+
+%\let\oldcite\cite
+%\renewcommand{\cite}[1]{\color{\ncs@citecolor}{\oldcite{#1}}}
 
 \LoadClass[
-  twoside,
-  openright,
-  degree    = master,               % degree = master | doctor
-  language  = english,              % language = chinese | english
-  fontset   = template,             % fontset = default | template | system | overleaf
-  watermark = true,                 % watermark = true | false
-  doi       = true,                 % doi = true | false
+    twoside,
+    openright,
+    degree    = master,               % degree = master | doctor
+    language  = english,              % language = chinese | english
+    fontset   = template,             % fontset = default | template | system | overleaf
+    watermark = true,                 % watermark = true | false
+    doi       = true,                 % doi = true | false
 ]{ntuthesis}
 
 \RequirePackage{xparse}
