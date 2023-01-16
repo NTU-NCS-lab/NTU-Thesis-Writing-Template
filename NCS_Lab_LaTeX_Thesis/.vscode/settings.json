@@ -1,0 +1,11 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex+biber",
+      "tools": [
+        "xelatex",
+        "biber",
+        "xelatex"
+      ]
+    }]
+}

@@ -77,84 +77,8 @@ Please follow the [instructions](https://github.com/NTU-NCS-lab/ThesisWritingTem
 Please run `biber main` to generate `main.bbl` first and then run `xelatex main` to generate pdf file.
 
 #### Method 2
-1. Open your VScode, press `ctrl+shift+P`.
-2. Type `settings`, and select `Open User Settings`.
-3. Go to the last json object, add a comma to the last object, and add following lines:
-    ```json=
-    "latex-workshop.latex.recipes": [
-      {
-        "name": "xelatex+biber",
-        "tools": [
-          "xelatex",
-          "biber",
-          "xelatex"
-        ]
-      },
-      {
-        "name": "xelatex",
-        "tools": [
-          "xelatex"
-        ]
-      },
-      {
-        "name": "pdflatex+biber",
-        "tools": [
-          "pdflatex",
-          "biber",
-          "pdflatex"
-        ]
-      },
-      {
-        "name": "pdflatex",
-        "tools": [
-          "pdflatex"
-        ]
-      },
-      {
-        "name": "biber only",
-        "tools": [
-          "biber"
-        ]
-      }
-    ],
-    "latex-workshop.latex.tools": [
-      {
-        "name": "biber",
-        "command": "biber",
-        "args": [
-          "%DOCFILE%"
-        ]
-      },
-      {
-        "name": "pdflatex",
-        "command": "pdflatex",
-        "args": [
-          "-synctex=1",
-          "-interaction=nonstopmode",
-          "-file-line-error",
-          "%DOC%"
-        ],
-        "env": {}
-      },
-      {
-        "name": "bibtex",
-        "command": "bibtex",
-        "args": [
-          "%DOCFILE%"
-        ],
-        "env": {}
-      },
-      {
-        "name": "xelatex",
-        "command": "xelatex",
-        "args": [
-          "%DOC%"
-        ],
-        "env": {}
-      },
-    ],
-    ```
-4. This will add commands to your Latex button, and then you should be able to compile the project by clicking `build` button. You can aslo find the buttons at ` TEX(extension column) > commands > Build LaTex project`
+1. Open this folder with VScode (Not the repo root folder).
+2. The workspace configuration in `.vscode/settings.json` will set proper compiler. The document will be compiled when you press `ctrl+s` or you can also find the action buttons in `TEX(extension column) > commands`.
 
 ## License
 

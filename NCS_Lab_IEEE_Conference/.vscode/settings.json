@@ -1,0 +1,11 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+          "name": "pdflatex+biber",
+          "tools": [
+            "pdflatex",
+            "biber",
+            "pdflatex"
+          ]
+        }]
+}
