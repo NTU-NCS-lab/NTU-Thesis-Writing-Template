@@ -28,10 +28,10 @@ The easiest method to start a latex project is editing on [Overleaf](https://www
 - The template [link](https://www.overleaf.com/read/cjhmcnpxjbgp) for NTU thesis writing.
 
 But if you want to build the project at local, please follow the guideline:
-1. Install [Latex](https://www.latex-project.org/get/) according to your system type.
+1. Install [Latex](https://www.latex-project.org/get/) according to your system type. ([TeXLive](https://tug.org/texlive/) is recommended, the reason is given [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#requirements))
 2. Choose an editor. [VScode](https://code.visualstudio.com/) is recommended.
 3. Install VScode [LaTex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 4. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
 
 ## Welcome for contributions
-There are still lots of missing stlyes. We appreciate your contributions. Please don't be hesitated to fork it and make pull requests.
+There are still lots of missing styles. We appreciate your contributions. Please don't be hesitated to fork it and make pull requests.
