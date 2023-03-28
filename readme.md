@@ -33,5 +33,12 @@ But if you want to build the project at local, please follow the guideline:
 3. Install VScode [LaTex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 4. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
 
+## Zotero users
+[Better Bibtex](https://retorque.re/zotero-better-bibtex/) is a add-ons for Zotero, which provides a better support for bibtex. With this plugin, 
+1. You can customize the citation key for each documents.
+2. It provides an integration with vscode, which allows you to insert a citation in a drop down menu (like the one in Microsoft plugin).
+
+Follow the [instruction](https://retorque.re/zotero-better-bibtex/installation/) to install the add-ons for Zotero. And you can download the extension for vscode [here](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex).
+
 ## Welcome for contributions
 There are still lots of missing styles. We appreciate your contributions. Please don't be hesitated to fork it and make pull requests.
