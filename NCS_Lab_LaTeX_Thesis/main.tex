@@ -24,7 +24,6 @@
 % ]{ncs-thesis}
 \documentclass{ncs-thesis}
 
-\addbibresource{ref.bib}
 \addbibresource{./back/references.bib}
 \input{ntusetup}
 
@@ -46,6 +45,21 @@
 \makelistoffigures                  % 圖目錄（List of Figures）
 \makelistoftables                   % 表目錄（List of Tables）
 \input{front/denotation}            % 符號列表（Denotation）
+
+
+
+% Examples 
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.5\columnwidth]{seal.png}}
+    \caption{Example of a figure caption.}
+    \label{fig}
+\end{figure}
+
+\begin{assumption}
+    Test assumption
+\end{assumption}
+
+\todomark{Testing todo}
 
 % 論文內容
 % Contents of Thesis

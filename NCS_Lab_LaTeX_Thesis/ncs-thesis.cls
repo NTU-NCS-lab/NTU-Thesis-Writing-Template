@@ -8,7 +8,7 @@
 % Author        : 朱雁丞 <r10921008@g.ntu.edu.tw>
 % Repository    : https://github.com/NTU-NCS-lab/ThesisWritingTemplate
 % Document      : https://github.com/NTU-NCS-lab/ThesisWritingTemplate
-% Last Updated  : 2023.01.16
+% Last Updated  : 2023.04.19
 
 % Please use xelatex as the compiler
 % Run `biber main` before compiling
@@ -36,6 +36,7 @@
 \RequirePackage{url}
 \RequirePackage{verbatim}
 \RequirePackage{svg}
+\usepackage{makecell}       % make cell in table 
 %\RequirePackage{sectsty} 
 
 \input{../src/ncs-style.cls}
@@ -52,6 +53,7 @@
 
     \DeclareCaptionFont{capblue}{\color{blue}}
     \captionsetup{font={capblue, bf}}
+    \newcommand{\todomark}[1]{{\color{red}{TODO: #1}}}
 \else
     \usepackage[
     backend=biber,
@@ -61,4 +63,3 @@
     bibstyle=ieee,
     ]{biblatex}
 \fi
-\addbibresource{./back/references.bib}
