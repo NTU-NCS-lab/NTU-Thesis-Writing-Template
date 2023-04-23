@@ -18,8 +18,7 @@ The NCS styled citation and bibliography format. Please add your bibitems in `re
 ### Colored denotation
 The references of equations are colored in blue. The following commands supports NCS style color denoting with fast-switching.
 ```
-\ncsred{text to red}
-\ncsblue{text to blue}
+\todomark{Something to todo}
 ```
 
 ## Quick start
@@ -35,10 +34,13 @@ But if you want to build the project at local, please follow the guideline:
 
 ## Zotero users
 [Better Bibtex](https://retorque.re/zotero-better-bibtex/) is a add-ons for Zotero, which provides a better support for bibtex. With this plugin, 
-1. You can customize the citation key for each documents.
-2. It provides an integration with vscode, which allows you to insert a citation in a drop down menu (like the one in Microsoft plugin).
+- You can customize the citation key for each documents.
+- It provides an integration with vscode, which allows you to insert a citation in a drop down menu (like the one in Microsoft plugin).
+- Follow the [instruction](https://retorque.re/zotero-better-bibtex/installation/) to install the add-ons for Zotero. And you can download the extension for vscode [here](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex).
 
-Follow the [instruction](https://retorque.re/zotero-better-bibtex/installation/) to install the add-ons for Zotero. And you can download the extension for vscode [here](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex).
+Hints:
+1. Right click a collection or library in Zotero, and click `Export library...` to save the bib file to the workspace (You can further check the `Keep updated` button to allow Zotero to update the bib file automatically). 
+2. Press `alt + z` in VScode to trigger the prompt to insert citations.
 
 ## Welcome for contributions
 There are still lots of missing styles. We appreciate your contributions. Please don't be hesitated to fork it and make pull requests.
