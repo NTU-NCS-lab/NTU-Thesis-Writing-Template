@@ -22,15 +22,42 @@ The references of equations are colored in blue. The following commands supports
 ```
 
 ## Quick start
+### Build on Overleaf
 The easiest method to start a latex project is editing on [Overleaf](https://www.overleaf.com). 
 - The template [link](https://www.overleaf.com/read/psfhfxjdnbtf) for IEEE conference.
 - The template [link](https://www.overleaf.com/read/cjhmcnpxjbgp) for NTU thesis writing.
 
+### Build at Local
 But if you want to build the project at local, please follow the guideline:
 1. Install [Latex](https://www.latex-project.org/get/) according to your system type. ([TeXLive](https://tug.org/texlive/) is recommended, the reason is given [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#requirements))
 2. Choose an editor. [VScode](https://code.visualstudio.com/) is recommended.
 3. Install VScode [LaTex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 4. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
+
+### Working with Your Own Git Repo
+You can keep tracking the newest feature and have your own git repo at the same time! The following instructions is inspired from [this solution](https://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server).
+1. Create your own branch by 
+    ```bash
+    git checkout -b YOUR_BRANCH_NAME
+    ```
+2. Create your repo on GitHub or any other git cloud. You should better to create a private repo.
+3. Commit your changes and rename the original remote 
+    ```bash
+    git remote rename origin upstream
+    ```
+4. Set your repo as the remote
+    ```bash
+    git branch -M main
+    git remote add origin URL_TO_YOUR_GITHUB_REPO
+    ```
+5. Push to your remote
+    ```bash
+    git push -u origin main
+    ```
+You can pull new features from the `upstream` by
+```bash
+git pull upstream master
+```
 
 ## Zotero users
 [Better Bibtex](https://retorque.re/zotero-better-bibtex/) is a add-ons for Zotero, which provides a better support for bibtex. With this plugin, 
