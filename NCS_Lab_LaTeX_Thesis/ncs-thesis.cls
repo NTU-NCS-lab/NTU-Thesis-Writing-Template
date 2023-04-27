@@ -2,7 +2,7 @@
 % 國立臺灣大學電機工程學系網狀控制實驗室模板 - IEEE conference
 % National Taiwan University (NTU) 
 % Department of Electrical Engineering
-% Thesis Template for IEEE conference
+% Thesis Template for Thesis
 % --------------------------------------------------
 % Version       : 1.1
 % Author        : 朱雁丞 <r10921008@g.ntu.edu.tw>
@@ -28,15 +28,18 @@
 ]{ntuthesis}
 
 \RequirePackage{amsmath,amsfonts}
-\RequirePackage{algorithmic}
+% \RequirePackage{algorithmic}
 \RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
 \RequirePackage{array}
 \RequirePackage{textcomp}
 \RequirePackage{stfloats}
 \RequirePackage{url}
 \RequirePackage{verbatim}
 \RequirePackage{svg}
-\usepackage{makecell}       % make cell in table 
+\usepackage{makecell}       % Make cell in table 
+\RequirePackage{threeparttable} % To use footnote in a table
+\RequirePackage{lscape}     % For figures or tables in landscape
 %\RequirePackage{sectsty} 
 
 \input{../src/ncs-style.cls}
