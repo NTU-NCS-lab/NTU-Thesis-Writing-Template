@@ -580,7 +580,7 @@
 % [目錄格式]
 %
 \addtocontents{toc}                                         % 修改目錄樣式
-{~\hfill\textbf{Page}\par}
+% {~\hfill\textbf{Page}\par}
 {}
 {}
 {}
@@ -827,28 +827,34 @@
 % [生成目錄]
 % Generate table of contents page.
 %
-\renewcommand{\contentsname}{\centerline{\ntu@tableofcontents}}
+\renewcommand{\contentsname}{\color{\ncs@titlecolor}\centerline{\ntu@tableofcontents}}
 \newcommand{\maketableofcontents}{
   \cleardoublepage
   \phantomsection
+  \setlength{\cftbeforetoctitleskip}{-30pt}
+  \setlength{\cftaftertoctitleskip}{10pt}
   \addcontentsline{toc}{chapter}{\ntu@tableofcontents}
   \tableofcontents
 }
 
 \let\oldnumberline\numberline
-\renewcommand{\listfigurename}{\centerline{\ntu@listoffigures}}
+\renewcommand{\listfigurename}{\color{\ncs@titlecolor}\centerline{\ntu@listoffigures}}
 \newcommand{\makelistoffigures}{
   \cleardoublepage
   \phantomsection
+  \setlength{\cftbeforeloftitleskip}{-30pt}
+  \setlength{\cftafterloftitleskip}{10pt}
   \addcontentsline{toc}{chapter}{\ntu@listoffigures}
   \renewcommand{\numberline}{\figurename~\oldnumberline}
   \listoffigures
 }
 
-\renewcommand{\listtablename}{\centerline{\ntu@listoftables}}
+\renewcommand{\listtablename}{\color{\ncs@titlecolor}\centerline{\ntu@listoftables}}
 \newcommand{\makelistoftables}{
   \cleardoublepage
   \phantomsection
+  \setlength{\cftbeforelottitleskip}{-30pt}
+  \setlength{\cftafterlottitleskip}{10pt}
   \addcontentsline{toc}{chapter}{\ntu@listoftables}
   \renewcommand{\numberline}{\tablename~\oldnumberline}
   \listoftables
