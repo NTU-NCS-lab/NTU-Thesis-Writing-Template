@@ -10,23 +10,29 @@
 % Document      : https://github.com/NTU-NCS-lab/ThesisWritingTemplate
 % Last Updated  : 2023.01.16
 
-%% Redefine colors
+%% Define colors
 \ifdefined\useNCSStyle
     \newcommand{\ncs@citecolor}{red}
     \newcommand{\ncs@titlecolor}{blue}
     \newcommand{\ncs@eqrefcolor}{blue}
+\else
+    \newcommand{\ncs@citecolor}{black}
+    \newcommand{\ncs@titlecolor}{black}
+    \newcommand{\ncs@eqrefcolor}{black}
 \fi
 
+% Define commands for colors setting
+\newcommand{\ncscolor}[2]{
+    \ifdefined\useNCSStyle
+        {\color{#1}{#2}}
+    \else
+        {#2}
+    \fi
+}
+\newcommand{\ncsred}[1]{\ncscolor{\ncs@citecolor}{#1}}
+\newcommand{\ncsblue}[1]{\ncscolor{\ncs@titlecolor}{#1}}
+
 \ifdefined\useNCSStyle
-    \newcommand{\ncscolor}[2]{
-        \ifdefined\useNCSStyle
-            {\color{#1}{#2}}
-        \else
-            {#2}
-        \fi
-    }
-    \newcommand{\ncsred}[1]{\ncscolor{\ncs@citecolor}{#1}}
-    \newcommand{\ncsblue}[1]{\ncscolor{\ncs@titlecolor}{#1}}
     
     \let\oldtitle\title
     \renewcommand{\title}[1]{{\color{\ncs@titlecolor}\oldtitle{#1}}}
