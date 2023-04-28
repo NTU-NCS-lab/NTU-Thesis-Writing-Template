@@ -88,13 +88,17 @@
 
 \newcommand{\ntu@tocsecindent@zh}{1.5em}
 \newcommand{\ntu@tocsecnumwidth@zh}{3.0em}
-\newcommand{\ntu@tocsubsecindent@zh}{3.0em}
+\newcommand{\ntu@tocsubsecindent@zh}{3.5em}
 \newcommand{\ntu@tocsubsecnumwidth@zh}{3.0em}
+\newcommand{\ntu@tocsubsubsecindent@zh}{5em}
+\newcommand{\ntu@tocsubsubsecnumwidth@zh}{4.5em}
 
 \newcommand{\ntu@tocsecindent@en}{2.5em}
 \newcommand{\ntu@tocsecnumwidth@en}{3.0em}
-\newcommand{\ntu@tocsubsecindent@en}{3.0em}
+\newcommand{\ntu@tocsubsecindent@en}{3.5em}
 \newcommand{\ntu@tocsubsecnumwidth@en}{3.0em}
+\newcommand{\ntu@tocsubsubsecindent@en}{5em}
+\newcommand{\ntu@tocsubsubsecnumwidth@en}{4.5em}
 
 % [定義命令]
 % Define essential commands.
@@ -405,6 +409,8 @@
   \newcommand{\ntu@tocsecnumwidth}{\ntu@tocsecnumwidth@zh}
   \newcommand{\ntu@tocsubsecindent}{\ntu@tocsubsecindent@zh}
   \newcommand{\ntu@tocsubsecnumwidth}{\ntu@tocsubsecnumwidth@zh}
+  \newcommand{\ntu@tocsubsubsecindent}{\ntu@tocsubsubsecindent@zh}
+  \newcommand{\ntu@tocsubsubsecnumwidth}{\ntu@tocsubsubsecnumwidth@zh}
 }
 
 \ifthenelse{\equal{\ntu@language}{english}}{
@@ -430,6 +436,8 @@
   \newcommand{\ntu@tocsecnumwidth}{\ntu@tocsecnumwidth@en}
   \newcommand{\ntu@tocsubsecindent}{\ntu@tocsubsecindent@en}
   \newcommand{\ntu@tocsubsecnumwidth}{\ntu@tocsubsecnumwidth@en}
+  \newcommand{\ntu@tocsubsubsecindent}{\ntu@tocsubsubsecindent@en}
+  \newcommand{\ntu@tocsubsubsecnumwidth}{\ntu@tocsubsubsecnumwidth@en}
 }
 
 % --------------------------------------------------
@@ -594,6 +602,7 @@
 
 \setlength{\cftbeforesecskip}{-3pt}                          % 修改目錄間距
 \setlength{\cftbeforesubsecskip}{-3pt}
+\setlength{\cftbeforesubsubsecskip}{-3pt}
 
 \setcounter{tocdepth}{3}                                    % 設定目錄深度
 \setcounter{secnumdepth}{3}                                 % 設定編號深度
@@ -601,6 +610,7 @@
 % \cftsetindents{entry}{indent}{numwidth}
 \cftsetindents{section}{\ntu@tocsecindent}{\ntu@tocsecnumwidth}
 \cftsetindents{subsection}{\ntu@tocsubsecindent}{\ntu@tocsubsecnumwidth}
+\cftsetindents{subsubsection}{\ntu@tocsubsubsecindent}{\ntu@tocsubsubsecnumwidth}
 
 % [頁首頁尾]
 %
