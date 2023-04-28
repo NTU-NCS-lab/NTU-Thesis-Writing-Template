@@ -921,24 +921,74 @@
 % [摘要環境]
 % Abstract Environment
 %
+% 中文摘要
 \renewenvironment{abstract}{
-  \fontsize{12}{18}\selectfont
-  \chapter*{\centering \ntu@abstract@zh}
+  \clearpage
+  \begin{singlespace}
+    \begin{center}
+      % Title
+      \vspace*{-1em}
+      \fontsize{18}{32}\selectfont
+      \ntu@title\par                            % Title
+      \vspace{2em}
+      % 
+      \fontsize{14}{16}\selectfont
+      研究生: \ntu@author
+      \hfill
+      指導教授: \ntu@advisor~博士\par
+      \vspace{1.5em}
+      \fontsize{16}{24}\selectfont
+      {\ntu@university}~~~{\ntu@institute}\par  % Institute
+    \end{center}
+  \end{singlespace}
+  % Disable clearpage to avoid page break after \chapter
+  \begingroup
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \vspace{5em}
+    \chapter*{\centerline{\ntu@abstract@zh}}
+    \vspace{-4em}
+  \endgroup
   \addcontentsline{toc}{chapter}{\ntu@abstract@zh}
 }{
   \bigbreak
-  \noindent \textbf{\ntu@keyword@zh}
-  \ntu@clist@use{\ntu@keywords}{\ntu@kwsymbol@zh}
+  \noindent \textbf{\ntu@keyword@zh}\par
+  \noindent \ncsred{\ntu@clist@use{\ntu@keywords}{\ntu@kwsymbol@zh}}
 }
 
+% 英文摘要
 \newenvironment{abstract*}{
-  \fontsize{12}{24}\selectfont
-  \chapter*{\centering \ntu@abstract@en}
+  \clearpage
+  \begin{singlespace}
+    \begin{center}
+      % Title
+      \vspace*{-1em}
+      \fontsize{18}{32}\selectfont
+      \ntu@title@en\par                            % Title
+      \vspace{2em}
+      % 
+      \fontsize{14}{16}\selectfont
+      Student: \ntu@author@en
+      \hfill
+      Advisor: \ntu@advisor@en,~Ph.D.\par
+      \vspace{1.5em}
+      \fontsize{16}{24}\selectfont
+      {\ntu@institute@en}\par{\ntu@university@en}  % Institute
+    \end{center}
+  \end{singlespace}
+  % Disable clearpage to avoid page break after \chapter
+  \begingroup
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \vspace{5em}
+    \chapter*{\centerline{\ntu@abstract@en}}
+    \vspace{-4em}
+  \endgroup
   \addcontentsline{toc}{chapter}{\ntu@abstract@en}
 }{
   \bigbreak
-  \noindent \textbf{\ntu@keyword@en}
-  \ntu@clist@use{\ntu@keywords@en}{\ntu@kwsymbol@en}
+  \noindent \textbf{\ntu@keyword@en}\par
+  \noindent \ncsred{\ntu@clist@use{\ntu@keywords@en}{\ntu@kwsymbol@en}}
 }
 
 % --------------------------------------------------
