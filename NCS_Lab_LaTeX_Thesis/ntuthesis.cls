@@ -61,13 +61,13 @@
 % 變數: 英文翻譯
 % Variables: Translation (English)
 \newcommand{\ntu@verificationletter@en}{Verification Letter from the Oral Examination Committee}
-\newcommand{\ntu@tableofcontents@en}{Contents}
-\newcommand{\ntu@listoffigures@en}{List of Figures}
-\newcommand{\ntu@listoftables@en}{List of Tables}
+\newcommand{\ntu@tableofcontents@en}{CONTENTS}
+\newcommand{\ntu@listoffigures@en}{LIST OF FIGURES}
+\newcommand{\ntu@listoftables@en}{LIST OF TABLES}
 \newcommand{\ntu@denotation@en}{Denotation}
 \newcommand{\ntu@bibliography@en}{References}
 \newcommand{\ntu@acknowledgement@en}{Acknowledgements}
-\newcommand{\ntu@abstract@en}{Abstract}
+\newcommand{\ntu@abstract@en}{ABSTRACT}
 \newcommand{\ntu@keyword@en}{Keywords:~}
 \newcommand{\ntu@kwsymbol@en}{,~}
 \newcommand{\ntu@appendix@en}{Appendix}
