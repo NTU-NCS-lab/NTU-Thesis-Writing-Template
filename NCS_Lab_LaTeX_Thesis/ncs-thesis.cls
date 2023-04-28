@@ -37,7 +37,7 @@
 \RequirePackage{url}
 \RequirePackage{verbatim}
 \RequirePackage{svg}
-\usepackage{makecell}       % Make cell in table 
+\RequirePackage{makecell}       % Make cell in table 
 \RequirePackage{threeparttable} % To use footnote in a table
 \RequirePackage{lscape}     % For figures or tables in landscape
 %\RequirePackage{sectsty} 

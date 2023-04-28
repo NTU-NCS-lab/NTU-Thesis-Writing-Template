@@ -592,8 +592,8 @@
 {}
 {\hfill\contentspage}
 
-\setlength{\cftbeforesecskip}{8pt}                          % 修改目錄間距
-\setlength{\cftbeforesubsecskip}{8pt}
+\setlength{\cftbeforesecskip}{-3pt}                          % 修改目錄間距
+\setlength{\cftbeforesubsecskip}{-3pt}
 
 \setcounter{tocdepth}{3}                                    % 設定目錄深度
 \setcounter{secnumdepth}{3}                                 % 設定編號深度
@@ -616,11 +616,16 @@
 % - before: 標題內容前增加文字
 % - after: 標題內容後增加文字
 %
-\titleformat{\chapter}                      % 設置 Chapter 格式
-{\color{\ncs@titlecolor}\centering\Huge\bfseries}                  % 定義 format
-{\ntu@titlechapter}              		    % 定義 label
-{1em}                                       % 定義 sep
-{}                                          % before
+\titleformat{\chapter}[display]                      % 設置 Chapter 格式
+{\color{\ncs@titlecolor}\raggedright\Huge\bfseries}  % 定義 format
+{\ntu@titlechapter}              		                 % 定義 label
+{-0.5em}                                             % 定義 sep
+{}                                                   % before
+
+% Adjust the spacing of chapter and section
+% \titlespacing*{hcommandi}{hlefti}{hbefore-sepi}{hafter-sepi}[hright-sepi]
+\titlespacing*{\chapter}{0pt}{-50pt}{0pt}
+\titlespacing*{\section}{0pt}{10pt}{0pt}
 
 \titleformat{\section}
 {\color{\ncs@titlecolor}\normalfont\Large\bfseries}
@@ -629,7 +634,7 @@
 % [圖表標題]
 %
 \setlength{\intextsep}{12bp \@plus4pt \@minus2pt}
-\captionsetup{}
+\captionsetup{justification=raggedright,singlelinecheck=false}  % To make the caption align left
 \captionsetup[table]{position=top,belowskip={12bp-\intextsep},aboveskip=6bp}
 \captionsetup[figure]{position=bottom,belowskip={12bp-\intextsep},aboveskip=6bp}
 \captionsetup[sub]{skip=6bp}
@@ -813,6 +818,8 @@
       Director: \rule{6.5cm}{0.5pt}
     \end{flushleft}
   \end{doublespace}
+  % \pagestyle{empty}
+  % \clearpage
   % 恢復預設板型
   \restoregeometry
 }
