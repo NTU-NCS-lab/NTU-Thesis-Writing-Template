@@ -222,6 +222,7 @@
 \newcommand\ntu@date@zh@digit[3]{\the\numexpr#1-1911\relax~年~\number#2~月~\number#3~日}
 \newcommand\ntu@date@zh@digit@short[3]{\the\numexpr#1-1911\relax~年~\number#2~月}
 \newcommand\ntu@date@en@short[3]{\monthname[#2] #1}
+\newcommand\ntu@date@en[3]{#3/#2/#1}
 
 \newcommand{\ntu@setgeometry}[1]{\expandafter\newgeometry\expandafter{#1}}
 
@@ -766,40 +767,52 @@
     %  口委審定書標題 (24, 36) (26, 39)
     %  論文題目 (20, 30)
     \begin{center}
-      \fontsize{24}{36}\selectfont
+      \fontsize{24}{12}\selectfont
       {\ntu@university}{\ntu@degree}學位{\ntu@type}\par
-      \fontsize{26}{39}\selectfont
+      \fontsize{26}{13}\selectfont
       口試委員會審定書\par
-      \vfill
-      \fontsize{20}{30}\selectfont
-      {\ntu@title}\par
+      \fontsize{14}{0em}\selectfont
+      \textbf{\MakeUppercase{{\ntu@degree@en}'s {\ntu@type@en} ACCEPTANCE CERTIFICATE}}\par
+      \textbf{\MakeUppercase{NATIONAL TAIWAN UNIVERSITY}}\par
+      \vspace{2em}
+      \fontsize{14}{1.25em}\selectfont
+      {\ntu@title}\par\par
       {\ntu@title@en}\par
     \end{center}
 
     % 口委審定書內容 (16, 24)
     \vfill
     \fontsize{16}{24}\selectfont
-    \Eindent
-    本論文係{\ntu@author}君（\ntu@ID）在{\ntu@university}{\ntu@institute}完成之{\ntu@degree}學位{\ntu@type}，於民國{\ntu@format@date{\ntu@date@zh@digit}{\ntu@oraldate}}承下列考試委員審查通過及口試及格，特此證明\par
+    \noindent 本論文係{\ntu@author} {\ntu@ID}在{\ntu@university}{\ntu@institute}完成之{\ntu@degree}學位{\ntu@type}，於民國{\ntu@format@date{\ntu@date@zh@digit}{\ntu@oraldate}}承下列考試委員審查通過及口試及格，特此證明。\par
+    \fontsize{12}{18}\selectfont
+    \noindent The undersigned, appointed by the {\ntu@institute@en} on \ntu@format@date{\ntu@date@en}{\ntu@date} have examined a \MakeLowercase{{\ntu@degree@en} {\ntu@type@en}} entitled above presented by {\ntu@author@en} {\ntu@ID} candidate and hereby certify that it is worthy of acceptance.
   \end{singlespace}
 
   \begin{doublespace}
-    % 口委簽名表格 (16, 24)
-    \begin{center}
-      \vfill
-      \fontsize{16}{24}\selectfont
-      \begin{tabularx}{\textwidth}{Xl}
-        {\hfill}口試委員：{\hfill}& \rule{11.5cm}{1pt}      \\
-          & \multicolumn{1}{c}{（指導教授）}                \\
-          & \rule{5cm}{1pt}\hspace{1.5cm}\rule{5cm}{1pt}  \\
-          & \rule{5cm}{1pt}\hspace{1.5cm}\rule{5cm}{1pt}  \\
-          & \rule{5cm}{1pt}\hspace{1.5cm}\rule{5cm}{1pt}  \\
-          & \rule{5cm}{1pt}\hspace{1.5cm}\rule{5cm}{1pt}  \\
-        所{\hfill}長：{\hfill}& \rule{9cm}{1pt}
+    \begin{flushleft}
+      % 口委簽名表格 (16, 24)
+      \fontsize{16}{16}\selectfont
+      \noindent 口試委員 
+      \fontsize{12}{24}\selectfont
+      \noindent Oral examination committee:\par
+      \vspace{1em}
+      
+      \fontsize{16}{16}\selectfont
+      \begin{tabularx}{\textwidth}{lll}
+        \rule{4.3cm}{0.5pt}\hspace{0.5cm} & \rule{4.3cm}{0.5pt}\hspace{0.5cm} & \rule{4.3cm}{0.2pt}  \\[-16pt]
+        \fontsize{11}{5}\selectfont
+        (指導教授 Advisor) & & \\[9pt]
+        \fontsize{16}{16}\selectfont
+        \rule{4.3cm}{0.5pt}\hspace{0.5cm} & \rule{4.3cm}{0.5pt}\hspace{0.5cm} & \rule{4.3cm}{0.5pt}  \\[16pt]
+        \rule{4.3cm}{0.5pt}\hspace{0.5cm} & \rule{4.3cm}{0.5pt}\hspace{0.5cm} & \rule{4.3cm}{0.5pt}  \\
       \end{tabularx}
-    \end{center}
+      \par
+      \vspace{1.2em}
+      系主任 
+      \fontsize{12}{16}\selectfont 
+      Director: \rule{6.5cm}{0.5pt}
+    \end{flushleft}
   \end{doublespace}
-
   % 恢復預設板型
   \restoregeometry
 }
