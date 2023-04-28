@@ -47,7 +47,7 @@
 \newcommand{\ntu@listoftables@zh}{表目錄}
 \newcommand{\ntu@denotation@zh}{符號列表}
 \newcommand{\ntu@bibliography@zh}{參考文獻}
-\newcommand{\ntu@acknowledgement@zh}{致謝}
+\newcommand{\ntu@acknowledgement@zh}{誌謝}
 \newcommand{\ntu@abstract@zh}{摘要}
 \newcommand{\ntu@keyword@zh}{關鍵字：}
 \newcommand{\ntu@kwsymbol@zh}{、}
@@ -919,8 +919,12 @@
 % Acknowledgement Environment
 %
 \newenvironment{acknowledgement}{
-  \chapter*{\centering \ntu@acknowledgement}
-  \addcontentsline{toc}{chapter}{\ntu@acknowledgement}
+  \begingroup
+    \vspace{5em}
+    \chapter*{\fontsize{18}{24}\selectfont\centerline{\ntu@acknowledgement@zh}}
+    \vspace{-4em}
+  \endgroup
+  \addcontentsline{toc}{chapter}{\ntu@acknowledgement@zh}
   \fontsize{12}{18}\selectfont
 }
 
@@ -987,7 +991,7 @@
     \let\clearpage\relax
     \let\cleardoublepage\relax
     \vspace{5em}
-    \chapter*{\centerline{\ntu@abstract@en}}
+    \chapter*{\fontsize{18}{24}\selectfont\centerline{\ntu@abstract@en}}
     \vspace{-4em}
   \endgroup
   \addcontentsline{toc}{chapter}{\ntu@abstract@en}
