@@ -1,5 +1,9 @@
 # LaTex Thesis Writing Template for NTUEE NCS Lab
 
+<div style="background-color:#FF7777;">
+由於研教組釋出的文件常有異動，提交檔案時請自行隨時注意格式是否與最新版本相符。
+</div>
+
 ## Main feature
 Default image source folder: `./imgs/`.
 
