@@ -383,8 +383,8 @@
   \newcommand{\ntu@degree}{碩士}
   \newcommand{\ntu@degree@en}{Master}
   \ifthenelse{\equal{\ntu@doctype}{draft}}{
-    \newcommand{\ntu@type}{論文初稿}
-    \newcommand{\ntu@type@en}{Thesis Draft}
+    \newcommand{\ntu@type}{論文(初稿)}
+    \newcommand{\ntu@type@en}{Thesis (Draft)}
   }{
     \newcommand{\ntu@type}{論文}
     \newcommand{\ntu@type@en}{Thesis}
@@ -395,8 +395,8 @@
   \newcommand{\ntu@degree}{博士}
   \newcommand{\ntu@degree@en}{Doctoral}
   \ifthenelse{\equal{\ntu@doctype}{draft}}{
-    \newcommand{\ntu@type}{論文初稿}
-    \newcommand{\ntu@type@en}{Dissertation Draft}
+    \newcommand{\ntu@type}{論文(初稿)}
+    \newcommand{\ntu@type@en}{Dissertation (Draft)}
   }{
     \newcommand{\ntu@type}{論文}
     \newcommand{\ntu@type@en}{Dissertation}
