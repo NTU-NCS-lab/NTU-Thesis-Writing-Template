@@ -284,6 +284,13 @@
     },
     default = true,
   },
+  doctype = {
+    choices = {
+      final,  
+      draft
+    },
+    default = draft
+  }
 }
 
 % [設定檔案]
@@ -375,15 +382,25 @@
 \ifthenelse{\equal{\ntu@degreeset}{master}}{
   \newcommand{\ntu@degree}{碩士}
   \newcommand{\ntu@degree@en}{Master}
-  \newcommand{\ntu@type}{論文}
-  \newcommand{\ntu@type@en}{Thesis}
+  \ifthenelse{\equal{\ntu@doctype}{draft}}{
+    \newcommand{\ntu@type}{論文初稿}
+    \newcommand{\ntu@type@en}{Thesis Draft}
+  }{
+    \newcommand{\ntu@type}{論文}
+    \newcommand{\ntu@type@en}{Thesis}
+  }
 }
 
 \ifthenelse{\equal{\ntu@degreeset}{doctor}}{
   \newcommand{\ntu@degree}{博士}
   \newcommand{\ntu@degree@en}{Doctoral}
-  \newcommand{\ntu@type}{論文}
-  \newcommand{\ntu@type@en}{Dissertation}
+  \ifthenelse{\equal{\ntu@doctype}{draft}}{
+    \newcommand{\ntu@type}{論文初稿}
+    \newcommand{\ntu@type@en}{Dissertation Draft}
+  }{
+    \newcommand{\ntu@type}{論文}
+    \newcommand{\ntu@type@en}{Dissertation}
+  }
 }
 
 \ifthenelse{\equal{\ntu@language}{chinese}}{

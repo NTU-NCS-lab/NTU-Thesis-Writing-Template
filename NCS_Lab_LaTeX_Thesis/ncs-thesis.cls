@@ -25,6 +25,7 @@
     fontset   = template,             % fontset = default | template | system | overleaf
     watermark = true,                 % watermark = true | false
     doi       = true,                 % doi = true | false
+    doctype   = draft,                % doctype = draft | final
 ]{ntuthesis}
 
 \RequirePackage{amsmath,amsfonts}
