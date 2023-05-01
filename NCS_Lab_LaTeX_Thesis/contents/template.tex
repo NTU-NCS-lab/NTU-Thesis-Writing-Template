@@ -1,0 +1,67 @@
+\chapter{Templates}
+
+
+\begin{tempsection}
+        % Examples 
+    Figure \ref{fig} is an example of figure.
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[width=0.3\columnwidth]{seal.png}}
+        \caption{Example of a figure caption.}
+        \label{fig}
+    \end{figure}
+
+    Figure \ref{fig2} is an example of landscape figure.
+    \begin{landscape}
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[width=0.2\columnwidth]{seal.png}}
+        \caption{Example of a figure caption.}
+        \label{fig2}
+    \end{figure}
+    \end{landscape}
+
+    \begin{table}[htbp]
+        \begin{center}
+        \begin{threeparttable}
+        \caption{Example table.\label{tab}}
+        \centering
+            \begin{tabular}{l c c c}
+                \toprule
+                    \textbf{1st Column} & \textbf{2nd Column} & \textbf{3rd Column} & \textbf{4th Column} \\ 
+                \midrule
+                    QWERTY\tnote{1}   &                     &                     &  \\
+                    ASDFGH\tnote{2}   &                     &                     &  \\ 
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \item [1] Note 1. 
+                \item [2] Note 2.
+            \end{tablenotes}
+        \end{threeparttable}
+    \end{center}
+    \end{table}
+
+    \begingroup
+    \begin{table}
+        \centering
+        \caption{This is an example table.}\label{tbl:nicetablelesstable}
+        \begin{tabular}{ll}
+            What & is     \\
+            \hline
+            this & doing? \\
+        \end{tabular}
+    \end{table}
+    \endgroup
+
+    \begin{assumption}
+        Test assumption
+    \end{assumption}
+
+    Please use `\textbackslash eqref' to refer an equation. Use `\textbackslash ref' to refer sections, figures or tables. For example, this is Section \ref{sec:1}, and this is equation \eqref{eq:1}.
+
+    \begin{equation}
+        E = mc^2
+        \label{eq:1}
+    \end{equation}
+
+    \todomark{Testing todo}
+\end{tempsection}
