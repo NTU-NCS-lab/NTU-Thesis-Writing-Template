@@ -15,10 +15,14 @@
     \newcommand{\ncs@citecolor}{red}
     \newcommand{\ncs@titlecolor}{blue}
     \newcommand{\ncs@eqrefcolor}{blue}
+    \newcommand{\ncs@tempcolor}{lightgray}
+    \newcommand{\ncs@todocolor}{lime}
 \else
     \newcommand{\ncs@citecolor}{black}
     \newcommand{\ncs@titlecolor}{black}
     \newcommand{\ncs@eqrefcolor}{black}
+    \newcommand{\ncs@tempcolor}{black}
+    \newcommand{\ncs@todocolor}{lime}
 \fi
 
 % Define commands for colors setting
@@ -31,6 +35,7 @@
 }
 \newcommand{\ncsred}[1]{\ncscolor{\ncs@citecolor}{#1}}
 \newcommand{\ncsblue}[1]{\ncscolor{\ncs@titlecolor}{#1}}
+\newcommand{\ncstemp}[1]{\ncscolor{\ncs@tempcolor}{#1}}
 
 \ifdefined\useNCSStyle
     

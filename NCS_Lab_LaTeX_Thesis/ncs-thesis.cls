@@ -57,7 +57,8 @@
 
     \DeclareCaptionFont{capblue}{\color{blue}}
     \captionsetup{font={capblue, bf}}
-    \newcommand{\todomark}[1]{{\color{red}{TODO: #1}}}
+    \newcommand{\todomark}[1]{{\color{\ncs@todocolor}{TODO: #1}}}
+    \newenvironment{tempsection}{\color{\ncs@tempcolor}}{}
 \else
     \usepackage[
     backend=biber,

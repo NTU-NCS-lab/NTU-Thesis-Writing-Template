@@ -216,11 +216,13 @@
 % Commands: Data Formating
 %
 \newcommand{\ntu@format@date}[2]{%
-  \edef\ntu@@date{#2}%
-  \def\ntu@@process@date##1-##2-##3\@nil{%
-    #1{##1}{##2}{##3}%
-  }%
-  \expandafter\ntu@@process@date\ntu@@date\@nil
+  \begin{doctypedepend}
+    \edef\ntu@@date{#2}%
+    \def\ntu@@process@date##1-##2-##3\@nil{%
+      #1{##1}{##2}{##3}%
+    }%
+    \expandafter\ntu@@process@date\ntu@@date\@nil
+  \end{doctypedepend}
 }
 \newcommand\ntu@date@zh@short[3]{\zhdigits{#1}年\zhnumber{#2}月}
 \newcommand\ntu@date@zh@digit[3]{\the\numexpr#1-1911\relax~年~\number#2~月~\number#3~日}
@@ -383,7 +385,7 @@
   \newcommand{\ntu@degree}{碩士}
   \newcommand{\ntu@degree@en}{Master}
   \ifthenelse{\equal{\ntu@doctype}{draft}}{
-    \newcommand{\ntu@type}{論文(初稿)}
+    \newcommand{\ntu@type}{論文{\color{\ncs@todocolor}(初稿)}}
     \newcommand{\ntu@type@en}{Thesis (Draft)}
   }{
     \newcommand{\ntu@type}{論文}
@@ -395,7 +397,7 @@
   \newcommand{\ntu@degree}{博士}
   \newcommand{\ntu@degree@en}{Doctoral}
   \ifthenelse{\equal{\ntu@doctype}{draft}}{
-    \newcommand{\ntu@type}{論文(初稿)}
+    \newcommand{\ntu@type}{論文{\color{\ncs@todocolor}(初稿)}}
     \newcommand{\ntu@type@en}{Dissertation (Draft)}
   }{
     \newcommand{\ntu@type}{論文}
@@ -581,6 +583,10 @@
 
 % [顏色設定]
 %
+% 根據 doc type 決定未確定資料的顏色
+\newenvironment{doctypedepend}{
+  \ifthenelse{\equal{\ntu@doctype}{draft}}{\color{\ncs@tempcolor}}{}
+}{}
 
 % [版面大小]
 %
