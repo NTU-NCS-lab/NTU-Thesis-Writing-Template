@@ -55,7 +55,4 @@
     
     \let\oldsubsubsection\subsubsection
     \renewcommand{\subsubsection}[1]{{\color{\ncs@titlecolor}\oldsubsubsection{#1}}}
-    
-    \let\oldeqref\eqref
-    \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}\oldeqref{#1}}}
 \fi

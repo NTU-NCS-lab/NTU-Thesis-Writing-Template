@@ -24,6 +24,7 @@ The references of equations are colored in blue. The following commands supports
 ```
 \todomark{Something to todo}
 ```
+Use `\eqref{}` and `\secref{}` to refer an equation or a section.
 
 ## Quick start
 ### Build on Overleaf

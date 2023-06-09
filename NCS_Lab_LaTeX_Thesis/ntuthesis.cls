@@ -600,13 +600,23 @@
 
 % [連結設定]
 %
+\ifdefined\useNCSStyle
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=gray,
+  anchorcolor=blue,
+  citecolor=red
+}
+\else
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
   filecolor=gray,
   anchorcolor=blue,
-  citecolor=red
+  citecolor=black
 }
+\fi
 
 % [目錄格式]
 %

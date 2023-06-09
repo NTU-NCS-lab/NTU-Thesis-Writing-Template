@@ -59,6 +59,13 @@
     \captionsetup{font={capblue, bf}}
     \newcommand{\todomark}[1]{{\color{\ncs@todocolor}{TODO: #1}}}
     \newenvironment{tempsection}{\color{\ncs@tempcolor}}{}
+
+    % Adding prefix for equation
+    \let\oldeqref\eqref
+    \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
+
+    % Adding prefix for section
+    \newcommand{\secref}[1]{{\color{\ncs@eqrefcolor}Section \ref{#1}}}
 \else
     \usepackage[
     backend=biber,
