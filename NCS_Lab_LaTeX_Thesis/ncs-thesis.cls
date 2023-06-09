@@ -66,6 +66,8 @@
 
     % Adding prefix for section
     \newcommand{\secref}[1]{{\color{\ncs@eqrefcolor}Section \ref{#1}}}
+    \newcommand{\figref}[1]{{\color{\ncs@eqrefcolor}Figure \ref{#1}}}
+    \newcommand{\tbref}[1]{{\color{\ncs@eqrefcolor}Table \ref{#1}}}
 \else
     \usepackage[
     backend=biber,

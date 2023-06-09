@@ -34,7 +34,7 @@ Mark for developement
     % Mark paragraphs as a temporary data
 \end{tempsection}
 ```
-Use `\eqref{}` and `\secref{}` to refer an equation or a section.
+Use `\eqref{}`, `\figref{}`, `\tbref{}`, and `\secref{}` to refer an equation or a section.
 
 ## Quick start
 ### Build on Overleaf
