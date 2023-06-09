@@ -22,7 +22,17 @@ The NCS styled citation and bibliography format. Please add your bibitems in `re
 ### Colored denotation
 The references of equations are colored in blue. The following commands supports NCS style color denoting with fast-switching.
 ```
+\ncsred{Something in red}
+\ncsblue{Something in blue}
+```
+
+Mark for developement 
+```
 \todomark{Something to todo}
+
+\begin{tempsection}
+    % Mark paragraphs as a temporary data
+\end{tempsection}
 ```
 Use `\eqref{}` and `\secref{}` to refer an equation or a section.
 

@@ -680,6 +680,7 @@
 \captionsetup{justification=raggedright,singlelinecheck=false}  % To make the caption align left
 \captionsetup[table]{position=top,belowskip={12bp-\intextsep},aboveskip=6bp}
 \captionsetup[figure]{position=bottom,belowskip={12bp-\intextsep},aboveskip=6bp}
+\captionsetup[subfigure]{justification=centering}
 \captionsetup[sub]{skip=6bp}
 
 % [引用格式]
