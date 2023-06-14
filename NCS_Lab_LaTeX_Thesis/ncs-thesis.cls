@@ -28,7 +28,7 @@
     doctype   = draft,                % doctype = draft | final
 ]{ntuthesis}
 
-\RequirePackage{amsmath,amsfonts}
+\RequirePackage{amsmath, amsthm,amsfonts}
 % \RequirePackage{algorithmic}
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
@@ -41,6 +41,7 @@
 \RequirePackage{makecell}       % Make cell in table 
 \RequirePackage{threeparttable} % To use footnote in a table
 \RequirePackage{lscape}     % For figures or tables in landscape
+\RequirePackage{thmtools}
 %\RequirePackage{sectsty} 
 
 \input{../src/ncs-style.cls}
@@ -65,9 +66,23 @@
     \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
 
     % Adding prefix for section
-    \newcommand{\secref}[1]{{\color{\ncs@eqrefcolor}Section \ref{#1}}}
-    \newcommand{\figref}[1]{{\color{\ncs@eqrefcolor}Figure \ref{#1}}}
-    \newcommand{\tbref}[1]{{\color{\ncs@eqrefcolor}Table \ref{#1}}}
+    \newcommand{\coloredref}[2]{{\color{\ncs@eqrefcolor}#1 \ref{#2}}}
+    \newcommand{\secref}[1]{\coloredref{Section}{#1}}
+    \newcommand{\figref}[1]{\coloredref{Figure}{#1}}
+    \newcommand{\tbref}[1]{\coloredref{Table}{#1}}
+
+    
+    \declaretheoremstyle[
+        headfont=\color{blue}\normalfont\bfseries,
+        % bodyfont=\color{red}\normalfont\itshape,
+    ]{colored}
+  
+    \declaretheorem[style=colored, name=Assumption]{assumption}
+    \declaretheorem[style=colored, name=Theorem]{theorem}
+    \declaretheorem[style=colored, name=Lemma]{lemma}
+    \declaretheorem[style=colored, name=Remark]{remark}
+    \declaretheorem[style=colored, name=Proposition]{proposition}
+    \declaretheorem[style=colored, name=Definition]{definition}
 \else
     \usepackage[
     backend=biber,
