@@ -8,25 +8,24 @@
 Default image source folder: `./imgs/`.
 
 ### Style fast-switching
-Fast style switching by commenting on this line in `main.tex`
+Fast style switching by setting options while loading `ncs-thesis` in `main.tex`.
 ```
-\def\useNCSStyle{1}
+\documentclass[
+    ncsstyle  = true,                  % ncsstyle = true | false
+    watermark = false,                 % watermark = true | false
+    doi       = false,                 % doi = true | false
+    doctype   = draft,                 % doctype = draft | final
+    print     = false,                 % print = false | true, switch colors to black
+]{ncs-thesis}
 ```
+#### NCS style
+1. NCS-styled title and caption format. The title and section headers are colored in blue. 
+2. NCS-styled citation and bibliography format. Please add your bibitems in `back/references.bib`. 
 
-### NCS style title and caption format
-The title and section headers are colored in blue. 
-
-### NCS style citation/bibliography
-The NCS-styled citation and bibliography format. Please add your bibitems in `ref.bib`. 
-
-### Colored denotation
-The references of equations are colored in blue. The following commands support NCS style color denoting with fast-switching.
-```
-\ncsred{Something in red}
-\ncsblue{Something in blue}
-```
-
-Mark for development 
+### Useful Commands for Thesis Writing
+<!-- The following commands support NCS style color denoting with fast-switching. -->
+Mark for under development
+For more examples, please refer to `contents/template.tex`.
 ```
 \todomark{Something to todo}
 
@@ -34,7 +33,11 @@ Mark for development
     % Mark paragraphs as a temporary data
 \end{tempsection}
 ```
-Use `\eqref{}`, `\figref{}`, `\tbref{}`, and `\secref{}` to refer an equation or a section.
+Use `\eqref{}`, `\figref{}`, `\tbref{}`, and `\secref{}` to refer an equation or a section, or use `\coloredref{text}{label}` to refer a customized label. Ex. 
+```
+\coloredref{Assumption}{LABEL_TO_YOUR_ASSUMPTION}
+```
+
 
 ## Quick start
 ### Build on Overleaf
@@ -44,7 +47,8 @@ The easiest method to start a latex project is editing on [Overleaf](https://www
 
 ### Build at Local
 But if you want to build the project locally, please follow the guidelines:
-1. Install [Latex](https://www.latex-project.org/get/) according to your system type. ([TeXLive](https://tug.org/texlive/) is recommended, the reason is given [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#requirements))
+1. Install [Latex](https://www.latex-project.org/get/) according to your system type. ([TeXLive](https://tug.org/texlive/) is recommended, the reason is given [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#requirements)). 
+    <!-- In alternative, the [IguanaTex](https://www.jonathanleroux.org/software/iguanatex/) -->
 2. Choose an editor. [VScode](https://code.visualstudio.com/) is recommended.
 3. Install VScode [LaTex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 4. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
