@@ -51,6 +51,41 @@
 %\RequirePackage{sectsty} 
 
 \input{../src/ncs-style.cls}
+    
+% region [define useful commands]
+% Useful commands
+\newcommand{\todomark}[1]{%
+    \ifthenelse{\equal{\ntu@print}{true}}
+    {\color{\ncs@todocolor}{TODO: #1}}{}}
+
+\newenvironment{tempsection}
+{\color{\ncs@tempcolor}}
+{}
+
+% Adding prefix for equation
+\let\oldeqref\eqref
+\renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
+
+
+% Adding prefix for sections, figures and tables
+\newcommand{\coloredref}[2]{{\color{\ncs@eqrefcolor}#1 \ref{#2}}}
+\newcommand{\secref}[1]{\coloredref{Section}{#1}}
+\newcommand{\figref}[1]{\coloredref{Figure}{#1}}
+\newcommand{\tbref}[1]{\coloredref{Table}{#1}}
+
+
+% Theorems  
+\declaretheoremstyle[
+    headfont=\color{\ncs@titlecolor}\normalfont\bfseries,
+]{colored}
+
+\declaretheorem[style=colored, name=Assumption]{assumption}
+\declaretheorem[style=colored, name=Theorem]{theorem}
+\declaretheorem[style=colored, name=Lemma]{lemma}
+\declaretheorem[style=colored, name=Remark]{remark}
+\declaretheorem[style=colored, name=Proposition]{proposition}
+\declaretheorem[style=colored, name=Definition]{definition}
+% endregion [define useful commands]
 
 %== use and define color ==%
 \ifdefined\useNCSStyle
@@ -68,45 +103,10 @@
         \renewcommand{\ncs@titlecolor}{black}
         \renewcommand{\ncs@tempcolor}{black}}
     {}
-    
-
-    % Useful commands
-    \newcommand{\todomark}[1]{%
-        \ifthenelse{\equal{\ntu@print}{true}}
-        {\color{\ncs@todocolor}{TODO: #1}}{}}
-    
-    \newenvironment{tempsection}
-    {\color{\ncs@tempcolor}}
-    {}
 
 
     \DeclareCaptionFont{capblue}{\color{\ncs@titlecolor}}
-    \captionsetup{font={capblue, bf}}
-
-
-    % Adding prefix for equation
-    \let\oldeqref\eqref
-    \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
-
-
-    % Adding prefix for sections, figures and tables
-    \newcommand{\coloredref}[2]{{\color{\ncs@eqrefcolor}#1 \ref{#2}}}
-    \newcommand{\secref}[1]{\coloredref{Section}{#1}}
-    \newcommand{\figref}[1]{\coloredref{Figure}{#1}}
-    \newcommand{\tbref}[1]{\coloredref{Table}{#1}}
-
-  
-    % Theorems  
-    \declaretheoremstyle[
-        headfont=\color{\ncs@titlecolor}\normalfont\bfseries,
-    ]{colored}
-  
-    \declaretheorem[style=colored, name=Assumption]{assumption}
-    \declaretheorem[style=colored, name=Theorem]{theorem}
-    \declaretheorem[style=colored, name=Lemma]{lemma}
-    \declaretheorem[style=colored, name=Remark]{remark}
-    \declaretheorem[style=colored, name=Proposition]{proposition}
-    \declaretheorem[style=colored, name=Definition]{definition}
+    \captionsetup{font={small, capblue, bf}}
 \else
     \usepackage[
     backend=biber,
