@@ -289,9 +289,15 @@
   doctype = {
     choices = {
       final,  
-      draft
+      draft,
     },
     default = draft
+  }, print = {
+    choices = {
+      true,
+      false,
+    },
+    default = false,
   }
 }
 
@@ -600,23 +606,26 @@
 
 % [連結設定]
 %
-\ifdefined\useNCSStyle
-\hypersetup{
-  colorlinks=true,
-  linkcolor=blue,
-  filecolor=gray,
-  anchorcolor=blue,
-  citecolor=red
-}
-\else
-\hypersetup{
-  colorlinks=true,
-  linkcolor=black,
-  filecolor=gray,
-  anchorcolor=blue,
-  citecolor=black
-}
-\fi
+\ifthenelse{\equal{\ntu@print}{true}}{
+  \hypersetup{colorlinks=false}}
+  {\ifdefined\useNCSStyle
+    \hypersetup{
+      colorlinks=true,
+      linkcolor=blue,
+      filecolor=gray,
+      anchorcolor=blue,
+      citecolor=red
+    }
+    \else
+    \hypersetup{
+      colorlinks=true,
+      linkcolor=black,
+      filecolor=gray,
+      anchorcolor=blue,
+      citecolor=black
+    }
+    \fi
+  }
 
 % [目錄格式]
 %
@@ -669,6 +678,8 @@
 % \titlespacing*{hcommandi}{hlefti}{hbefore-sepi}{hafter-sepi}[hright-sepi]
 \titlespacing*{\chapter}{0pt}{-50pt}{0pt}
 \titlespacing*{\section}{0pt}{10pt}{0pt}
+\titlespacing*{\subsection}{0pt}{30pt plus 5pt minus 0pt}{-4pt}
+\titlespacing*{\subsubsection}{0pt}{30pt plus 5pt minus 0pt}{-4pt}
 
 \titleformat{\section}
 {\color{\ncs@titlecolor}\normalfont\Large\bfseries}
@@ -832,7 +843,7 @@
     % 口委審定書內容 (16, 24)
     \vfill
     \fontsize{16}{24}\selectfont
-    \noindent 本論文係{\ntu@author} {\ntu@ID}在{\ntu@university}{\ntu@institute}完成之{\ntu@degree}學位{\ntu@type}，於民國{\ntu@format@date{\ntu@date@zh@digit}{\ntu@oraldate}}承下列考試委員審查通過及口試及格，特此證明。\par
+    \noindent 本論文係{\ntu@author} {(\ntu@ID)}在{\ntu@university}{\ntu@institute}完成之{\ntu@degree}學位{\ntu@type}，於民國{\ntu@format@date{\ntu@date@zh@digit}{\ntu@oraldate}}承下列考試委員審查通過及口試及格，特此證明。\par
     \fontsize{12}{18}\selectfont
     \noindent The undersigned, appointed by the {\ntu@institute@en} on \ntu@format@date{\ntu@date@en}{\ntu@date} have examined a \MakeLowercase{{\ntu@degree@en} {\ntu@type@en}} entitled above presented by {\ntu@author@en} {\ntu@ID} candidate and hereby certify that it is worthy of acceptance.
   \end{singlespace}

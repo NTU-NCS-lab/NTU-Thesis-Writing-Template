@@ -26,7 +26,13 @@
     watermark = true,                 % watermark = true | false
     doi       = true,                 % doi = true | false
     doctype   = draft,                % doctype = draft | final
+    print     = false,                % print = false | true, change colors to black
 ]{ntuthesis}
+
+% The print mode disables 
+% 1) \todomark{} command
+% 2) the tempsection environment, please check all tempsections before printing
+% 3) colors, redefining all caption colors to black, except for citations and equations
 
 \RequirePackage{amsmath, amsthm,amsfonts}
 % \RequirePackage{algorithmic}
@@ -56,25 +62,43 @@
     bibstyle=../src/ncs-bbx,
     ]{biblatex}
 
-    \DeclareCaptionFont{capblue}{\color{blue}}
+    
+    \ifthenelse{\equal{\ntu@print}{true}}{%
+        \renewcommand{\ncs@todocolor}{black}
+        \renewcommand{\ncs@titlecolor}{black}
+        \renewcommand{\ncs@tempcolor}{black}}
+    {}
+    
+
+    % Useful commands
+    \newcommand{\todomark}[1]{%
+        \ifthenelse{\equal{\ntu@print}{true}}
+        {\color{\ncs@todocolor}{TODO: #1}}{}}
+    
+    \newenvironment{tempsection}
+    {\color{\ncs@tempcolor}}
+    {}
+
+
+    \DeclareCaptionFont{capblue}{\color{\ncs@titlecolor}}
     \captionsetup{font={capblue, bf}}
-    \newcommand{\todomark}[1]{{\color{\ncs@todocolor}{TODO: #1}}}
-    \newenvironment{tempsection}{\color{\ncs@tempcolor}}{}
+
 
     % Adding prefix for equation
     \let\oldeqref\eqref
     \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
 
-    % Adding prefix for section
+
+    % Adding prefix for sections, figures and tables
     \newcommand{\coloredref}[2]{{\color{\ncs@eqrefcolor}#1 \ref{#2}}}
     \newcommand{\secref}[1]{\coloredref{Section}{#1}}
     \newcommand{\figref}[1]{\coloredref{Figure}{#1}}
     \newcommand{\tbref}[1]{\coloredref{Table}{#1}}
 
-    
+  
+    % Theorems  
     \declaretheoremstyle[
-        headfont=\color{blue}\normalfont\bfseries,
-        % bodyfont=\color{red}\normalfont\itshape,
+        headfont=\color{\ncs@titlecolor}\normalfont\bfseries,
     ]{colored}
   
     \declaretheorem[style=colored, name=Assumption]{assumption}

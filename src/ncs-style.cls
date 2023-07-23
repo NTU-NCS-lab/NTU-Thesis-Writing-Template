@@ -21,7 +21,7 @@
     \newcommand{\ncs@citecolor}{black}
     \newcommand{\ncs@titlecolor}{black}
     \newcommand{\ncs@eqrefcolor}{black}
-    \newcommand{\ncs@tempcolor}{black}
+    \newcommand{\ncs@tempcolor}{lightgray}
     \newcommand{\ncs@todocolor}{lime}
 \fi
 
