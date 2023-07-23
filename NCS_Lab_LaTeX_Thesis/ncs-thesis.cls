@@ -17,22 +17,40 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ncs-thesis}[2022/08/14 v1.0 NTU NCS lab Thesis Template]
 
-\LoadClass[
-    twoside,
-    openright,
-    degree    = master,               % degree = master | doctor
-    language  = english,              % language = chinese | english
-    fontset   = template,             % fontset = default | template | system | overleaf
-    watermark = true,                 % watermark = true | false
-    doi       = true,                 % doi = true | false
-    doctype   = draft,                % doctype = draft | final
-    print     = false,                % print = false | true, change colors to black
-]{ntuthesis}
+% region [options setup]
+% Declare options
+\RequirePackage{xkeyval}
+\RequirePackage{iftex}
+\RequirePackage{ifthen}
+\DeclareOptionX{ncsstyle}{\newcommand{\ncs@ncsstyle}[0]{#1}}
+\DeclareOptionX{watermark}{\newcommand{\ncs@watermark}[0]{#1}}
+\DeclareOptionX{doi}{\newcommand{\ncs@doi}[0]{#1}}
+\DeclareOptionX{doctype}{\newcommand{\ncs@doctype}[0]{#1}}
+\DeclareOptionX{print}{\newcommand{\ncs@print}[0]{#1}}
+\ProcessOptionsX
 
 % The print mode disables 
 % 1) \todomark{} command
 % 2) the tempsection environment, please check all tempsections before printing
 % 3) colors, redefining all caption colors to black, except for citations and equations
+
+\ifthenelse{\equal{\ncs@ncsstyle}{true}}
+{\def\useNCSStyle{1}}
+{}
+% endregion [options setup]
+
+% region [load packages]
+% Load parant class
+\LoadClass[twoside,
+    openright,
+    degree    = master,               % degree = master | doctor
+    language  = english,              % language = chinese | english
+    fontset   = template,             % fontset = default | template | system | overleaf
+    watermark = \ncs@watermark,       % watermark = true | false
+    doi       = \ncs@doi,             % doi = true | false
+    doctype   = \ncs@doctype,         % doctype = draft | final
+    print     = \ncs@print,           % print = false | true, switch colors to black
+]{ntuthesis}
 
 \RequirePackage{amsmath, amsthm,amsfonts}
 % \RequirePackage{algorithmic}
@@ -49,6 +67,7 @@
 \RequirePackage{lscape}     % For figures or tables in landscape
 \RequirePackage{thmtools}
 %\RequirePackage{sectsty} 
+% endregion [load packages]
 
 \input{../src/ncs-style.cls}
     

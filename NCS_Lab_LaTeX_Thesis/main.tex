@@ -13,19 +13,13 @@
 % 使用此模板需自負檢查責任 http://www.lib.ntu.edu.tw/node/103
 % --------------------------------------------------
 
-% Comment this line to use the original style
-\def\useNCSStyle{1}
-
-% \documentclass[
-%   twoside,
-%   openright,
-%   degree    = master,               % degree = master | doctor
-%   language  = english,              % language = chinese | english
-%   fontset   = template,             % fontset = default | template | system | overleaf
-%   watermark = true,                 % watermark = true | false
-%   doi       = true,                 % doi = true | false
-% ]{ncs-thesis}
-\documentclass{ncs-thesis}
+\documentclass[
+    ncsstyle  = true,                  % ncsstyle = true | false
+    watermark = false,                 % watermark = true | false
+    doi       = false,                 % doi = true | false
+    doctype   = draft,                 % doctype = draft | final
+    print     = false,                 % print = false | true, switch colors to black
+]{ncs-thesis}
 
 \addbibresource{./back/references.bib}
 \input{ntusetup}
