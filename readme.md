@@ -24,7 +24,7 @@ Fast style switching by setting options while loading `ncs-thesis` in `main.tex`
 
 ### Useful Commands for Thesis Writing
 <!-- The following commands support NCS style color denoting with fast-switching. -->
-Mark for under development
+Mark for under-development
 For more examples, please refer to `contents/template.tex`.
 ```
 \todomark{Something to todo}
@@ -77,7 +77,7 @@ The following instructions came from [this solution](https://stackoverflow.com/q
     ```
 You can pull new features from the `upstream` by
 ```bash
-git pull upstream master
+git pull upstream main
 ```
 
 ## Zotero users
