@@ -1,11 +1,17 @@
 # LaTex Thesis Writing Template for NTUEE NCS Lab
 
 <div style="background-color:#FF7777;">
-由於研教組釋出的文件常有異動，提交檔案時請自行隨時注意格式是否與最新版本相符。
+    由於研教組釋出的文件常有異動，提交檔案時請自行隨時注意格式是否與最新版本相符。<br>
 </div>
 
+**注意事項**
+- Template 中的口委審定書是[研教組釋出的版本](http://www.lib.ntu.edu.tw/node/103)，並非 NCS style，有需要的同學請參閱過去學長姐資料。<br>
+- 如有其他實驗室同學想要使用這個模板，在 `main.tex` 中修改為 `ncsstyle  = false` 即可。
+- Overleaf 上的版本更新會比較慢，最新版本以這個 repo 上的檔案為主。
+
 ## Main feature
-Default image source folder: `./imgs/`.
+- Default image source folder: `./imgs/`.
+- Default bibliography file: `./back/references.bib`.
 
 ### Style fast-switching
 Fast style switching by setting options while loading `ncs-thesis` in `main.tex`.
@@ -45,8 +51,8 @@ The easiest method to start a latex project is editing on [Overleaf](https://www
 - The template [link](https://www.overleaf.com/read/psfhfxjdnbtf) for IEEE conference.
 - The template [link](https://www.overleaf.com/read/cjhmcnpxjbgp) for NTU thesis writing.
 
-### Build at Local
-But if you want to build the project locally, please follow the guidelines:
+### Build Locally
+If you want to work with Zotero, git, or other plugins, it is recommended to build your project locally.
 1. Install [Latex](https://www.latex-project.org/get/) according to your system type. ([TeXLive](https://tug.org/texlive/) is recommended, the reason is given [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#requirements)). 
     <!-- In alternative, the [IguanaTex](https://www.jonathanleroux.org/software/iguanatex/) -->
 2. Choose an editor. [VScode](https://code.visualstudio.com/) is recommended.
@@ -85,6 +91,7 @@ git pull upstream main
 - You can customize the citation key for each document.
 - It provides integration with vscode, which allows you to insert a citation in a drop-down menu (like the one in Microsoft plugin).
 - Follow the [instruction](https://retorque.re/zotero-better-bibtex/installation/) to install the add-ons for Zotero. And you can download the extension for vscode [here](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex).
+- [Research Helper](https://github.com/sciyen/ResearchHelper) is a plugin for draw.io, you can organize your references on their [customized drawio](https://sciyen.github.io/drawio/src/main/webapp/index.html?p=zotero.js), which provides an integration of Zotero and this project.
 
 Hints:
 1. Right-click a collection or library in Zotero, and click `Export library...` to save the bib file to the workspace (You can further check the `Keep updated` button to allow Zotero to update the bib file automatically). 
