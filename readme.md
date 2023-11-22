@@ -15,7 +15,7 @@
 
 ### Style fast-switching
 Fast style switching by setting options while loading `ncs-thesis` in `main.tex`.
-```
+```latex
 \documentclass[
     ncsstyle  = true,                  % ncsstyle = true | false
     watermark = false,                 % watermark = true | false
@@ -24,6 +24,9 @@ Fast style switching by setting options while loading `ncs-thesis` in `main.tex`
     print     = false,                 % print = false | true, switch colors to black
 ]{ncs-thesis}
 ```
+1. Set `ncsstyle` to false or true to switch between the official style and the NCS style.
+2. Set `doctype` to draft or final to switch between draft and final version. In draft version, several useful commands such as `\todomark{}` can be used to highlight the content that needs to be modified. And a `draft` annotation will be added to the cover page.
+3. Set `print` to false or true to switch between color and black-white mode. In black-white mode, all colors will be converted to black.
 #### NCS style
 1. NCS-styled title and caption format. The title and section headers are colored in blue. 
 2. NCS-styled citation and bibliography format. Please add your bibitems in `back/references.bib`. 

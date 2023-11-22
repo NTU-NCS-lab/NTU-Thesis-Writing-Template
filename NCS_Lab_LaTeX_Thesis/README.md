@@ -67,6 +67,23 @@ This is a modification from [this](https://github.com/Hsins/NTU-Thesis-LaTeX-Tem
 ## Quick start
 Please use `xelatex` to compile this project.
 
+### Basic Configurations
+Remember to update the options in `ntusetup.tex`.
+
+There are several basic configurations in `main.tex` and `ntusetup.tex` that you can modify. At the begining of `main.tex`, you can set the following options:
+```latex
+\documentclass[
+    ncsstyle  = false,                 % ncsstyle = true | false
+    watermark = false,                 % watermark = true | false
+    doi       = false,                 % doi = true | false
+    doctype   = draft,                 % doctype = draft | final
+    print     = false,                 % print = false | true, switch colors to black
+]{ncs-thesis}
+```
+1. Set `ncsstyle` to false or true to switch between the official style and the NCS style.
+2. Set `doctype` to draft or final to switch between draft and final version. In draft version, several useful commands such as `\todomark{}` can be used to highlight the content that needs to be modified. And a `draft` annotation will be added to the cover page.
+3. Set `print` to false or true to switch between color and black-white mode. In black-white mode, all colors will be converted to black.
+
 ### Overleaf
 The easiest method is to edit on Overleaf, please follow this [link](https://www.overleaf.com/read/cjhmcnpxjbgp) and make a copy from it.
 
