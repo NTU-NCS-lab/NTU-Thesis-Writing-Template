@@ -49,6 +49,7 @@ Use `\eqref{}`, `\figref{}`, `\tbref{}`, and `\secref{}` to refer an equation or
 
 
 ## Quick start
+
 ### Build on Overleaf
 The easiest method to start a latex project is editing on [Overleaf](https://www.overleaf.com). 
 - The template [link](https://www.overleaf.com/read/psfhfxjdnbtf) for IEEE conference.
@@ -57,7 +58,14 @@ The easiest method to start a latex project is editing on [Overleaf](https://www
 ### Build Locally
 If you want to work with Zotero, git, or other plugins, it is recommended to build your project locally.
 1. Install [Latex](https://www.latex-project.org/get/) according to your system type. ([TeXLive](https://tug.org/texlive/) is recommended, the reason is given [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install#requirements)). 
-    <!-- In alternative, the [IguanaTex](https://www.jonathanleroux.org/software/iguanatex/) -->
+    <!-- In the alternative, the [IguanaTex](https://www.jonathanleroux.org/software/iguanatex/) -->
+   - For Ubuntu users, you can install Latex via
+     ```bash
+     sudo apt-get update -y
+     sudo apt install texlive-latex-extra -y
+     sudo apt-get install -y dvipng
+     ```
+     P.S. The installation on a Linux system is much faster than on Windows.
 2. Choose an editor. [VScode](https://code.visualstudio.com/) is recommended.
 3. Install VScode [LaTex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 4. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
@@ -100,5 +108,11 @@ Hints:
 1. Right-click a collection or library in Zotero, and click `Export library...` to save the bib file to the workspace (You can further check the `Keep updated` button to allow Zotero to update the bib file automatically). 
 2. Press `alt + z` in VScode to trigger the prompt to insert citations.
 
+
+## Trouble Shooting
+- The compiler for `NCS_Lab_LaTeX_Thesis` and `NCS_Lab_IEEE_Conference` are different, which is handled automatically by the settings in folder `.vscode` if you use VScode to compile the document. 
+    To enable this magic, you should open the folder (`NCS_Lab_LaTeX_Thesis` or `NCS_Lab_IEEE_Conference`) directly via VScode, instead of the root of this repo.
+  
+
 ## Welcome for contributions
-There are still lots of missing styles. We appreciate your contributions. Please don't hesitate to fork it and make pull requests.
+There are still lots of missing styles, templates for new users, and ambiguous or unclear documents. We appreciate your contributions. Please don't hesitate to fork it and make pull requests.
