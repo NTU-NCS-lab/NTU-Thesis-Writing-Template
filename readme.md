@@ -68,7 +68,10 @@ If you want to work with Zotero, git, or other plugins, it is recommended to bui
      P.S. The installation on a Linux system is much faster than on Windows.
 2. Choose an editor. [VScode](https://code.visualstudio.com/) is recommended.
 3. Install VScode [LaTex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
-4. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
+    With LaTex Workshop, you can use the `Go to source` feature. 
+   - From pdf to source, press `ctrl` + click somewhere interested in pdf.
+   - From source to pdf, leave the cursor at somewhere interested in latex source, and then press `ctrl + alt + j`.
+5. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
 
 ### Working with Your Own Git Repo
 You can have your private git repo for your thesis by making clones.
