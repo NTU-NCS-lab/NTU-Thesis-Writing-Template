@@ -63,4 +63,16 @@
     bibstyle=ieee,
     ]{biblatex}
 \fi
+
+% To make the reference font size smaller
+\AtBeginBibliography{\footnotesize}
+
+% Clear useless fields to avoid being displayed in the bibliography
+\AtEveryBibitem{%
+  \clearfield{note}%
+  \clearfield{url}%
+  \clearfield{urldate}%
+  \clearfield{urlyear}%
+}
+
 \addbibresource{ref.bib}
