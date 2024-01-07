@@ -2,8 +2,8 @@
 
 
 \begin{tempsection}
-        % Examples 
-    \figref{fig} is an example of figure.
+    % Examples 
+    \figref{fig} is an example of a figure.
     \begin{figure}[htbp]
         \centerline{\includegraphics[width=0.3\columnwidth]{seal.png}}
         \caption{Example of a figure caption.}
@@ -37,33 +37,33 @@
 
     Figure \ref{fig2} is an example of landscape figure.
     \begin{landscape}
-    \begin{figure}[htbp]
-        \centerline{\includegraphics[width=0.2\columnwidth]{seal.png}}
-        \caption{Example of a figure caption.}
-        \label{fig2}
-    \end{figure}
+        \begin{figure}[htbp]
+            \centerline{\includegraphics[width=0.2\columnwidth]{seal.png}}
+            \caption{Example of a figure caption.}
+            \label{fig2}
+        \end{figure}
     \end{landscape}
 
     This is an example table, \tbref{tb:this_is_table}.
     \begin{table}[htbp]
         \begin{center}
         \begin{threeparttable}
-        \caption{Example table.\label{tb:this_is_table}}
-        \centering
+            \caption{Example table.\label{tb:this_is_table}}
+            \centering
             \begin{tabular}{l c c c}
                 \toprule
-                    \textbf{1st Column} & \textbf{2nd Column} & \textbf{3rd Column} & \textbf{4th Column} \\ 
+                \textbf{1st Column} & \textbf{2nd Column} & \textbf{3rd Column} & \textbf{4th Column} \\
                 \midrule
-                    QWERTY\tnote{1}   &                     &                     &  \\
-                    ASDFGH\tnote{2}   &                     &                     &  \\ 
+                QWERTY\tnote{1}     &                     &                     &                     \\
+                ASDFGH\tnote{2}     &                     &                     &                     \\
                 \bottomrule
             \end{tabular}
             \begin{tablenotes}
-                \item [1] Note 1. 
+                \item [1] Note 1.
                 \item [2] Note 2.
             \end{tablenotes}
         \end{threeparttable}
-    \end{center}
+        \end{center}
     \end{table}
 
     \begingroup
