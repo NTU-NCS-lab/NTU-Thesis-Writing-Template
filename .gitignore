@@ -9,3 +9,9 @@
 **/*.synctex.gz
 
 **/*.ini
+
+
+**/*lot
+**/*lof
+**/*out
+**/*toc

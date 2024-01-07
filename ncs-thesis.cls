@@ -69,7 +69,7 @@
 %\RequirePackage{sectsty} 
 % endregion [load packages]
 
-\input{../src/ncs-style.cls}
+\input{./NCS-Thesis-Style/ncs-style.cls}
     
 % region [define useful commands]
 % Useful commands
@@ -111,9 +111,9 @@
     \usepackage[
     backend=biber,
     hyperref=true,
-    citestyle=../src/ncs-citation,
+    citestyle=./NCS-Thesis-Style/ncs-citation,
     indexing=true,
-    bibstyle=../src/ncs-bbx,
+    bibstyle=./NCS-Thesis-Style/ncs-bbx,
     ]{biblatex}
 
     
