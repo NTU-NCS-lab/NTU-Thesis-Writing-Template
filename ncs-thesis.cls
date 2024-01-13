@@ -27,6 +27,7 @@
 \DeclareOptionX{doi}{\newcommand{\ncs@doi}[0]{#1}}
 \DeclareOptionX{doctype}{\newcommand{\ncs@doctype}[0]{#1}}
 \DeclareOptionX{print}{\newcommand{\ncs@print}[0]{#1}}
+\DeclareOptionX{removetemp}{\newcommand{\ncs@removetemp}[0]{#1}}
 \ProcessOptionsX
 
 % The print mode disables 
@@ -64,22 +65,35 @@
 \RequirePackage{svg}
 \RequirePackage{makecell}       % Make cell in table 
 \RequirePackage{threeparttable} % To use footnote in a table
-\RequirePackage{lscape}     % For figures or tables in landscape
+\RequirePackage{lscape}         % For figures or tables in landscape
 \RequirePackage{thmtools}
 %\RequirePackage{sectsty} 
+\RequirePackage{version}        % To hide tempsections
 % endregion [load packages]
+
+% In case of someone forget to run `git submodule update`
+\IfFileExists{./NCS-Thesis-Style/ncs-style.cls}
+    {}{%
+        % File not exist, run git submodule update
+        \message{Trying to update submodule}
+        \immediate\write18{git submodule init && git submodule update}
+    }
 
 \input{./NCS-Thesis-Style/ncs-style.cls}
     
 % region [define useful commands]
 % Useful commands
 \newcommand{\todomark}[1]{%
-    \ifthenelse{\equal{\ntu@print}{true}}
-    {\color{\ncs@todocolor}{TODO: #1}}{}}
+    \ifthenelse{\equal{\ncs@removetemp}{true}}
+    {}{%
+    {\color{\ncs@todocolor}{TODO: #1}}}}
 
-\newenvironment{tempsection}
-{\color{\ncs@tempcolor}}
-{}
+% Temporary sections, this will be suppressed when removetemp is true
+\ifthenelse{\equal{\ncs@removetemp}{true}}{%
+    \excludeversion{tempsection}}{%
+    \newenvironment{tempsection}
+        {\color{\ncs@tempcolor}}{}
+    }
 
 % Adding prefix for equation
 \let\oldeqref\eqref
