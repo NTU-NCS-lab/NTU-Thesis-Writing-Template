@@ -27,4 +27,7 @@
               "%DOCFILE%"
           ]
       }],
+      "latex-workshop.latex.clean.subfolder.enabled": true,
+      "latex-workshop.latex.autoBuild.run": "onSave",
+      "zotero.latexCommand": "cite",
   }
