@@ -57,6 +57,8 @@
 
 \newcommand{\ntu@titlechapter@zh}{第\CJKnumber{\thechapter}章}
 \newcommand{\ntu@titlechaptertoc@zh}{第\CJKnumber{\thecontentslabel}章}
+\newcommand{\ntu@titleappendix@zh}{\ntu@appendix@zh~\CJKnumber{\thechapter}}
+\newcommand{\ntu@titleappendixtoc@zh}{\ntu@appendix@zh~\CJKnumber{\thecontentslabel}}
 
 % 變數: 英文翻譯
 % Variables: Translation (English)
@@ -76,6 +78,8 @@
 
 \newcommand{\ntu@titlechapter@en}{Chapter~\thechapter}
 \newcommand{\ntu@titlechaptertoc@en}{Chapter~\thecontentslabel}
+\newcommand{\ntu@titleappendix@en}{\ntu@appendix@en~\thechapter}
+\newcommand{\ntu@titleappendixtoc@en}{\ntu@appendix@en~\thecontentslabel}
 
 % 變數: 版面設定
 % Variables: Layouts
@@ -415,6 +419,8 @@
   % 設定中文
   \newcommand{\ntu@titlechapter}{\ntu@titlechapter@zh}
   \newcommand{\ntu@titlechaptertoc}{\ntu@titlechaptertoc@zh}
+  \newcommand{\ntu@titleappendix}{\ntu@titleappendix@zh}
+  \newcommand{\ntu@titleappendixtoc}{\ntu@titleappendixtoc@zh}
   \newcommand{\ntu@tocchaptersize}{\ntu@tocchaptersize@zh}
   \newcommand{\ntu@tocsectionindent}{\ntu@tocsectionindent@zh}
   \newcommand{\ntu@tocsubsectionindent}{\ntu@tocsubsectionindent@zh}
@@ -442,6 +448,8 @@
   % 設定英文
   \newcommand{\ntu@titlechapter}{\ntu@titlechapter@en}
   \newcommand{\ntu@titlechaptertoc}{\ntu@titlechaptertoc@en}
+  \newcommand{\ntu@titleappendix}{\ntu@titleappendix@en}
+  \newcommand{\ntu@titleappendixtoc}{\ntu@titleappendixtoc@en}
   \newcommand{\ntu@tocchaptersize}{\ntu@tocchaptersize@en}
   \newcommand{\ntu@tocsectionindent}{\ntu@tocsectionindent@en}
   \newcommand{\ntu@tocsubsectionindent}{\ntu@tocsubsectionindent@en}
@@ -670,7 +678,12 @@
 %
 \titleformat{\chapter}[display]                      % 設置 Chapter 格式
 {\color{\ncs@titlecolor}\raggedright\Huge\bfseries}  % 定義 format
-{\ntu@titlechapter}              		                 % 定義 label
+{%
+  \ifnum\pdfstrcmp{\@currenvir}{appendices}=0        % 定義 label
+    \ntu@titleappendix%~---~
+  \else
+    \ntu@titlechapter
+  \fi}              		                 
 {-0.5em}                                             % 定義 sep
 {}                                                   % before
 
@@ -936,14 +949,20 @@
 }
 
 % [附錄]
-% \appendix{NUM}{TITLE}
+% \appendix
 %
-\renewcommand{\appendix}[2]{
-  \chapter*{\ntu@appendix~{#1}~---~#2}
-  \phantomsection
-  \addcontentsline{toc}{chapter}{\ntu@appendix~{#1}~---~#2}
-  \setcounter{section}{0}
-  \renewcommand{\thechapter}{#1}
+\newenvironment{appendices}{}{}
+
+\renewcommand{\appendix}{
+  \renewcommand{\thechapter}{\Alph{chapter}}
+  \setcounter{chapter}{0}
+
+  % Redefine the chapter title to appendix
+  \titlecontents{chapter}[0em]                                % 修改目錄樣式
+  {\addvspace{0.5em}\normalsize\bfseries\protect}
+  {\fboxrule=0pt\fboxsep=0pt\framebox[\ntu@tocchaptersize][l]{\ntu@titleappendixtoc}}
+  {}
+  {\hfill\contentspage}
 }
 
 % --------------------------------------------------
