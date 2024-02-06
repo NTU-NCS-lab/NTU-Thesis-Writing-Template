@@ -42,9 +42,9 @@
 % 變數: 中文翻譯
 % Variables: Translation (Chinese)
 \newcommand{\ntu@verificationletter@zh}{口試委員審定書}
-\newcommand{\ntu@tableofcontents@zh}{目錄}
-\newcommand{\ntu@listoffigures@zh}{圖目錄}
-\newcommand{\ntu@listoftables@zh}{表目錄}
+\newcommand{\ntu@tableofcontents@zh}{目次}
+\newcommand{\ntu@listoffigures@zh}{圖次}
+\newcommand{\ntu@listoftables@zh}{表次}
 \newcommand{\ntu@denotation@zh}{符號列表}
 \newcommand{\ntu@bibliography@zh}{參考文獻}
 \newcommand{\ntu@acknowledgement@zh}{誌謝}
@@ -393,7 +393,7 @@
 % Assign variables according to configs.
 \ifthenelse{\equal{\ntu@degreeset}{master}}{
   \newcommand{\ntu@degree}{碩士}
-  \newcommand{\ntu@degree@en}{Master}
+  \newcommand{\ntu@degree@en}{Master's}
   \ifthenelse{\equal{\ntu@doctype}{draft}}{
     \newcommand{\ntu@type}{論文{\color{\ncs@todocolor}(初稿)}}
     \newcommand{\ntu@type@en}{Thesis (Draft)}
@@ -845,7 +845,7 @@
       \fontsize{26}{13}\selectfont
       口試委員會審定書\par
       \fontsize{14}{0em}\selectfont
-      \textbf{\MakeUppercase{{\ntu@degree@en}'s {\ntu@type@en} ACCEPTANCE CERTIFICATE}}\par
+      \textbf{\MakeUppercase{{\ntu@degree@en} {\ntu@type@en} ACCEPTANCE CERTIFICATE}}\par
       \textbf{\MakeUppercase{NATIONAL TAIWAN UNIVERSITY}}\par
       \vspace{2em}
       \fontsize{14}{1.25em}\selectfont
@@ -858,7 +858,7 @@
     \fontsize{16}{24}\selectfont
     \noindent 本論文係{\ntu@author} {(\ntu@ID)}在{\ntu@university}{\ntu@institute}完成之{\ntu@degree}學位{\ntu@type}，於民國{\ntu@format@date{\ntu@date@zh@digit}{\ntu@oraldate}}承下列考試委員審查通過及口試及格，特此證明。\par
     \fontsize{12}{18}\selectfont
-    \noindent The undersigned, appointed by the {\ntu@institute@en} on \ntu@format@date{\ntu@date@en}{\ntu@date} have examined a \MakeLowercase{{\ntu@degree@en} {\ntu@type@en}} entitled above presented by {\ntu@author@en} {\ntu@ID} candidate and hereby certify that it is worthy of acceptance.
+    \noindent The undersigned, appointed by the {\ntu@institute@en} on \ntu@format@date{\ntu@date@en}{\ntu@date} have examined a {{\ntu@degree@en} {\ntu@type@en}} entitled above presented by {\ntu@author@en} {\ntu@ID} candidate and hereby certify that it is worthy of acceptance.
   \end{singlespace}
 
   \begin{doublespace}

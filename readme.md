@@ -35,6 +35,8 @@ If you are looking for IEEE conference template, please checkout out to [`IEEE-c
 
 <div style="background-color:#FF7777;">
     由於研教組釋出的文件常有異動，提交檔案時請自行隨時注意格式是否與最新版本相符。<br>
+    目前版本：<a href="https://www.lib.ntu.edu.tw/doc/cl/THESISSAMPLE.doc
+">112.10.20  112學年度第1學期第1次教務會議通過</a>
 </div>
 
 **注意事項**
