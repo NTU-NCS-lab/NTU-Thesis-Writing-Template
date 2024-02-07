@@ -30,6 +30,7 @@
 \RequirePackage{kvdefinekeys, kvsetkeys, kvoptions}
 \RequirePackage{iftex}
 \RequirePackage{ifthen}
+\RequirePackage[toc,page]{appendix}
 
 % [定義變數]
 % Define essential variables.
@@ -951,19 +952,13 @@
 % [附錄]
 % \appendix
 %
-\newenvironment{appendices}{}{}
-
-\renewcommand{\appendix}{
-  \renewcommand{\thechapter}{\Alph{chapter}}
-  \setcounter{chapter}{0}
-
-  % Redefine the chapter title to appendix
+\newenvironment{appendices}{
   \titlecontents{chapter}[0em]                                % 修改目錄樣式
   {\addvspace{0.5em}\normalsize\bfseries\protect}
   {\fboxrule=0pt\fboxsep=0pt\framebox[\ntu@tocchaptersize][l]{\ntu@titleappendixtoc}}
   {}
   {\hfill\contentspage}
-}
+}{}
 
 % --------------------------------------------------
 % 09 自訂環境（Custom Environments）
