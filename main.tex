@@ -44,11 +44,17 @@
 % 封面與口試審定
 % Cover and Verification Letter
 \makecover                          % 論文封面（Cover）
-\makeverification                   % 口試委員審定書（Verification Letter）
+% \makeverification                   % 口試委員審定書（Verification Letter）
+
+% Uncomment this line to import your own verification in pdf
+% You may need to save as a copy in pdf/A format (using adobe acrobat)                  
+\includepdf[pages=-]{verification.pdf} % To insert the verification page
 
 % 致謝與論文摘要
 % Acknowledgement and Abstract
 \include{front/acknowledgement}       % 致謝（Acknowledgement）
+\pagenumbering{roman}                 % 重新設定頁碼格式
+\setcounter{page}{1}                  % 重新設定頁碼起始值
 \include{front/abstract}              % 摘要（Abstract）
 
 % 生成目錄與符號列表

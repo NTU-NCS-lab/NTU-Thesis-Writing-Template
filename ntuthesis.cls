@@ -993,8 +993,8 @@
     \chapter*{\fontsize{18}{24}\selectfont\centerline{\ntu@acknowledgement@zh}}
     \vspace{-4em}
   \endgroup
-  \addcontentsline{toc}{chapter}{\ntu@acknowledgement@zh}
   \fontsize{12}{18}\selectfont
+  \thispagestyle{empty} % Disable page number
 }
 
 % [摘要環境]
