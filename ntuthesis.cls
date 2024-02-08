@@ -105,6 +105,11 @@
 \newcommand{\ntu@tocsubsubsecindent@en}{5em}
 \newcommand{\ntu@tocsubsubsecnumwidth@en}{4.5em}
 
+
+% 變數: 輸出設定
+% Variables: Layouts
+\newcommand{\ntu@watermarkfromntulibrary}{true}   % 是否使用臺大圖書館水印
+
 % [定義命令]
 % Define essential commands.
 
@@ -1080,7 +1085,11 @@
 % If the watermark is downloaded from https://www.lib.ntu.edu.tw/doc/CL/watermark.pdf,
 % adjust the opacity to 0.5.
 % If the seal.pdf is used, adjust the opacity to 0.25. 
-\ifthenelse{\equal{\ntu@watermark}{true}}{\makewatermark{0.5}{watermark}}{}
+\ifthenelse{\equal{\ntu@watermark}{true}}{%
+  \ifthenelse{\equal{\ntu@watermarkfromntulibrary}{true}}
+  {\makewatermark{0.5}{watermark}}
+  {\makewatermark{0.25}{seal}}
+}{}
 
 % 根據設定決定是否添加數位標識
 % Insert DOI according to the config.
