@@ -1077,7 +1077,10 @@
 % 根據設定決定是否添加浮水印
 % Insert watermark according to the config.
 %
-\ifthenelse{\equal{\ntu@watermark}{true}}{\makewatermark{0.25}{seal}}{}
+% If the watermark is downloaded from https://www.lib.ntu.edu.tw/doc/CL/watermark.pdf,
+% adjust the opacity to 0.5.
+% If the seal.pdf is used, adjust the opacity to 0.25. 
+\ifthenelse{\equal{\ntu@watermark}{true}}{\makewatermark{0.5}{watermark}}{}
 
 % 根據設定決定是否添加數位標識
 % Insert DOI according to the config.
