@@ -1,11 +1,10 @@
 # LaTex Thesis Writing Template for NTUEE NCS Lab
 
 <div style="background-color:#FF7777;">
-    由於研教組釋出的文件常有異動，提交檔案時請自行隨時注意格式是否與最新版本相符。<br>
+    由於模板樣式常有異動，提交檔案時請自行隨時注意格式是否與最新版本相符。<br>
 </div>
 
 **注意事項**
-- Template 中的口委審定書是[研教組釋出的版本](http://www.lib.ntu.edu.tw/node/103)，並非 NCS style，有需要的同學請參閱過去學長姐資料。<br>
 - 如有其他實驗室同學想要使用這個模板，在 `main.tex` 中修改為 `ncsstyle  = false` 即可。
 - Overleaf 上的版本更新會比較慢，最新版本以這個 repo 上的檔案為主。
 
@@ -71,7 +70,8 @@ If you want to work with Zotero, git, or other plugins, it is recommended to bui
     With LaTex Workshop, you can use the `Go to source` feature. 
    - From pdf to source, press `ctrl` + click somewhere interested in pdf.
    - From source to pdf, leave the cursor at somewhere interested in latex source, and then press `ctrl + alt + j`.
-5. Download this repo, open the corresponding project folder  (`NCS_Lab_IEEE_Conference` or `NCS_Lab_LaTeX_Thesis`), and click the `Build LaTex project` button.
+5. Open the root folder of this repo with VScode. The workspace configuration in `.vscode/settings.json` will set proper compiler. The document will be compiled when you press `ctrl+s` or you can also find the action buttons in `TEX(extension column) > commands`. 
+Alternatively, you can manually run `biber main` to generate `main.bbl` first and then run `pdflatex main` to generate pdf file.
 
 ### Working with Your Own Git Repo
 You can have your private git repo for your thesis by making clones.
@@ -98,6 +98,16 @@ The following instructions came from [this solution](https://stackoverflow.com/q
 You can pull new features from the `upstream` by
 ```bash
 git pull upstream main
+```
+
+## Switching to specific conference template
+To replace the basis template, please copy the `.cls` to the same folder of `main.tex`, and modify the class loading script in `ncs-ieee-conference.cls`. For example, if you want to use `example-style.cls` instead of the default IEEE conference style. Replace the line in `ncs-ieee-conference.cls`
+```
+\LoadClass[conference]{IEEEtran}
+```
+with
+```
+\LoadClass{example-style}
 ```
 
 ## Zotero users
