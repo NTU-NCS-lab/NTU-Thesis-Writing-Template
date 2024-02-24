@@ -1,0 +1,3 @@
+[submodule "NCS-Thesis-Style"]
+	path = NCS-Thesis-Style
+	url = https://github.com/NTU-NCS-lab/NCS-Thesis-Style.git
