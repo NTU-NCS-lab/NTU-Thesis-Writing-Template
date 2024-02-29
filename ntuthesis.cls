@@ -604,8 +604,8 @@
 % [顏色設定]
 %
 % 根據 doc type 決定未確定資料的顏色
-\newenvironment{doctypedepend}{
-  \ifthenelse{\equal{\ntu@doctype}{draft}}{\color{\ncs@tempcolor}}{}
+\newenvironment{doctypedepend}{%
+  \ifthenelse{\equal{\ntu@doctype}{draft}}{\color{\ncs@tempcolor}}{}%
 }{}
 
 % [版面大小]
