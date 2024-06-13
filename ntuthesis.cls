@@ -715,7 +715,9 @@
 
 % [引用格式]
 %
-\renewcommand\thesubfigure{~(\alph{subfigure})}
+% \renewcommand\thesubfigure{~(\alph{subfigure})}
+% Remove the extra space
+\renewcommand\thesubfigure{(\alph{subfigure})}
 
 % --------------------------------------------------
 % 08 自訂命令（Custom Commands）
