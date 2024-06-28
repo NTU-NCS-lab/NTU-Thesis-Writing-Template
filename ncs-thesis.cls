@@ -97,15 +97,23 @@
 
 % Adding prefix for equation
 \let\oldeqref\eqref
-\renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
-
 
 % Adding prefix for sections, figures and tables
 \newcommand{\coloredref}[2]{{\color{\ncs@eqrefcolor}#1 \ref{#2}}}
-\newcommand{\secref}[1]{\coloredref{Section}{#1}}
-\newcommand{\figref}[1]{\coloredref{Figure}{#1}}
-\newcommand{\tbref}[1]{\coloredref{Table}{#1}}
 
+\ifthenelse{\equal{\ntu@language}{chinese}}{
+    \newcommand{\secref}[1]{\coloredref{章節}{#1}}
+    \newcommand{\figref}[1]{\coloredref{圖}{#1}}
+    \newcommand{\tbref}[1]{\coloredref{表}{#1}}
+    \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}式 \oldeqref{#1}}}
+}
+
+\ifthenelse{\equal{\ntu@language}{english}}{
+    \newcommand{\secref}[1]{\coloredref{Section}{#1}}
+    \newcommand{\figref}[1]{\coloredref{Figure}{#1}}
+    \newcommand{\tbref}[1]{\coloredref{Table}{#1}}
+    \renewcommand{\eqref}[1]{{\color{\ncs@eqrefcolor}Equation \oldeqref{#1}}}
+}
 
 % Theorems  
 \declaretheoremstyle[
