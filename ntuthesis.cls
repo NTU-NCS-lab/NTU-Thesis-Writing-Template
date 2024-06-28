@@ -58,8 +58,8 @@
 
 \newcommand{\ntu@titlechapter@zh}{第\CJKnumber{\thechapter}章}
 \newcommand{\ntu@titlechaptertoc@zh}{第\CJKnumber{\thecontentslabel}章}
-\newcommand{\ntu@titleappendix@zh}{\ntu@appendix@zh~\CJKnumber{\thechapter}}
-\newcommand{\ntu@titleappendixtoc@zh}{\ntu@appendix@zh~\CJKnumber{\thecontentslabel}}
+\newcommand{\ntu@titleappendix@zh}{\ntu@appendix@zh~{\thechapter}}
+\newcommand{\ntu@titleappendixtoc@zh}{\ntu@appendix@zh~{\thecontentslabel}}
 
 % 變數: 英文翻譯
 % Variables: Translation (English)
