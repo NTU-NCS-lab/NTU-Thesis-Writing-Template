@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+      - name: Git Submodule Update
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
