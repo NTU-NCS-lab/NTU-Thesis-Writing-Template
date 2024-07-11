@@ -828,6 +828,13 @@
         \ntu@format@date{\ntu@date@en@short}{\ntu@date}
       \end{center}
     \end{singlespace}
+    
+    \ifthenelse{\equal{\ntu@watermark}{true}}{%
+      \begin{tikzpicture}[remember picture, overlay]
+        \coordinate (WM) at ([xshift=-4.325cm, yshift=-4.325cm] current page.north east);
+        \node [scale=1, opacity=0.5*\watermarkOpacity] at (WM) {\includegraphics[width=3.65cm, height=3.65cm]{\watermarkFilePath}};
+      \end{tikzpicture}
+    }{}
   \end{titlepage}
 
   % 清除頁碼
@@ -1087,10 +1094,17 @@
 % If the watermark is downloaded from https://www.lib.ntu.edu.tw/doc/CL/watermark.pdf,
 % adjust the opacity to 0.5.
 % If the seal.pdf is used, adjust the opacity to 0.25. 
+
+
 \ifthenelse{\equal{\ntu@watermark}{true}}{%
-  \ifthenelse{\equal{\ntu@watermarkfromntulibrary}{true}}
-  {\makewatermark{0.5}{watermark}}
-  {\makewatermark{0.25}{seal}}
+  \ifthenelse{\equal{\ntu@watermarkfromntulibrary}{true}}{%
+    \newcommand{\watermarkOpacity}{0.5}%
+    \newcommand{\watermarkFilePath}{watermark}%
+  }{%
+    \newcommand{\watermarkOpacity}{0.25}%
+    \newcommand{\watermarkFilePath}{seal}%
+  }%
+  \makewatermark{\watermarkOpacity}{\watermarkFilePath}
 }{}
 
 % 根據設定決定是否添加數位標識
