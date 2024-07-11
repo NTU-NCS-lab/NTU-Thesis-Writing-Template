@@ -2,7 +2,7 @@
 <div align="right">
 
   [![](https://img.shields.io/badge/docs-Wiki-F7D360.svg?logo=&style=flat-square)](https://github.com/NTU-NCS-lab/NTU-Thesis-Writing-Template/tree/main)
-  [![](https://img.shields.io/github/license/Hsins/NTU-Thesis.svg?style=flat-square)](./LICENSE)
+  [![Build LaTeX document](https://github.com/NTU-NCS-lab/NTU-Thesis-Writing-Template/actions/workflows/compile_and_release.yaml/badge.svg)](https://github.com/NTU-NCS-lab/NTU-Thesis-Writing-Template/actions/workflows/compile_and_release.yaml)
 
 </div>
 
