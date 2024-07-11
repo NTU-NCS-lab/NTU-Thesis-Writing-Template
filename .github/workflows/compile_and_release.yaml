@@ -8,8 +8,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Git Submodule Update
         run: |
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
+          git submodule init && git submodule update
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
