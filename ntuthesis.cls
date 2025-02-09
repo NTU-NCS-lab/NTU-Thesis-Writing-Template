@@ -1016,7 +1016,8 @@
 %
 % 中文摘要
 \renewenvironment{abstract}{
-  \clearpage
+  % \clearpage
+  \cleardoublepage % in case the chinese abstract not ends on an odd pag
   \begin{singlespace}
     \begin{center}
       % Title
@@ -1051,7 +1052,8 @@
 
 % 英文摘要
 \newenvironment{abstract*}{
-  \clearpage
+  % \clearpage
+  \cleardoublepage % in case the chinese abstract not ends on an odd pag
   \begin{singlespace}
     \begin{center}
       % Title

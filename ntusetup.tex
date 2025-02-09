@@ -52,3 +52,14 @@
 
 
 \usepackage{pdfpages}                   % To insert the verification page
+
+% 自定义引用格式：在内文引用中使用 et al. (如果有 3 个或更多作者)
+\AtEveryCitekey{\ifnameundef{labelname}
+  {\defcounter{maxnames}{1}}
+  {\ifnum\value{listtotal}>2
+    \defcounter{maxnames}{1}\defcounter{minnames}{1}\def\etalstring{et al.}\fi}}
+
+% 自定义参考文献列表格式：显示所有作者
+\AtEveryBibitem{\ifnameundef{labelname}
+  {}
+  {\defcounter{maxnames}{99}\defcounter{minnames}{1}}}
